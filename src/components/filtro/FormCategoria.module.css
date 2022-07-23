@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  display: flex;
+  text-transform: capitalize;
+}
+
+.form label input {
+  order: -1;
+  margin-right: .3rem;
+}

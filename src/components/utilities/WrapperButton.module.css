@@ -1,0 +1,12 @@
+.button {
+  padding: .5rem .8rem;
+  background: radial-gradient(100% 100% at 50.27% 0%, var(--cor-3) 0%, var(--cor-2) 100%);
+  color: var(--cor-4);
+  border-radius: .2rem;
+  border: none;
+  transition: .1s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}

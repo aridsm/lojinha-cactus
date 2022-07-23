@@ -1,0 +1,52 @@
+.btnCor {
+  padding: .3rem .5rem;
+  border-radius: .2rem;
+  text-transform: capitalize
+}
+
+.listaCores {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .7rem;
+}
+
+.corItem {
+  position: relative;
+}
+
+.corItem label {
+  display: block;
+  width: 100%;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: .03s;
+  cursor: pointer;
+}
+
+.corItem label:hover {
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.corItem input {
+  position: absolute;
+  z-index: -99;
+  visibility: hidden;
+}
+
+.checked {
+  color: var(--cor-6);
+  background: var(--cor-5);
+  border: 1px solid var(--cor-6);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 2;
+  top: -.4rem;
+  right: -.4rem;
+}

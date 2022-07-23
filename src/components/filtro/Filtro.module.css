@@ -1,0 +1,20 @@
+.filtro {
+  background: var(--cor-1);
+  padding: 2rem;
+  min-height: 100vh;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgb(228, 228, 228);
+}
+
+.filtro h2 {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.button {
+  margin-top: 2rem;
+  display: block;
+  margin-left: auto;
+}

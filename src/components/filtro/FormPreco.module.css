@@ -1,0 +1,21 @@
+.form input {
+  width: 4rem;
+  padding: .2rem 0.1rem;
+  border-radius: .2rem;
+  border: 1px solid rgb(228, 228, 228);
+  ;
+  margin-left: auto;
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1rem;
+  width: 100%;
+}

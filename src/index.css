@@ -1,13 +1,48 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Ribeye+Marrow&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --cor-1: #F8FBF8;
+  --cor-2: #F17CAD;
+  --cor-3: #FE96C2;
+  --cor-4: #570B2B;
+  --cor-5: #7FD878;
+  --cor-6: #245320;
+  --cor-7: #EDF1ED;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(32, 32, 32)
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none
+}
+
+button,
+input,
+a {
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit
 }
