@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import classes from './CartItem.module.css';
 
-const CarItem = ({ nome, preco, img }) => {
+const CarItem = ({ nome, preco, img, quantidade }) => {
+
 
   useEffect(() => {
     console.log(img)
@@ -19,7 +20,7 @@ const CarItem = ({ nome, preco, img }) => {
       </div>
       <form>
         <label htmlFor='quantidade'>qt.</label>
-        <input type='number' />
+        <input type='number' id='quantidade' name='quantidade' value={+quantidade} />
       </form>
     </li>
   )

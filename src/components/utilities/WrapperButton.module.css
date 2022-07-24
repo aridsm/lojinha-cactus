@@ -1,10 +1,11 @@
 .button {
-  padding: .5rem .8rem;
+  padding: .8rem 1rem;
   background: radial-gradient(100% 100% at 50.27% 0%, var(--cor-3) 0%, var(--cor-2) 100%);
   color: var(--cor-4);
   border-radius: .2rem;
   border: none;
   transition: .1s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
 }
 
 .button:hover {

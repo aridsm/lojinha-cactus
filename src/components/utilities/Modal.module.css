@@ -13,7 +13,6 @@
 
 .content {
   background: var(--cor-1);
-  padding: 2rem 2.5rem;
   transform: translateY(-1rem);
   animation: .1s show forwards;
   border-radius: .2rem;

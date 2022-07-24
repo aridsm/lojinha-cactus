@@ -10,9 +10,9 @@
 
 .produtos ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   justify-content: start;
-  grid-gap: 2.5rem;
+  grid-gap: 1.5rem;
   list-style: none;
   margin: 2rem 0;
 }
