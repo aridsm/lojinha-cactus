@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import WrapperFiltroSection from '../utilities/WrapperFiltroSection'
 import { ReactComponent as IconCheck } from '../../assets/check.svg'
 import classes from './FormCores.module.css'
+import { FilterContext } from '../../context/FilterContext'
 
 const cores = [{
   cor: 'rosa',
@@ -45,14 +46,10 @@ const cores = [{
 
 const FormCores = () => {
 
-  const [coresSelecionadas, setCoresSelecionadas] = useState(cores.map(item => item.cor))
+  const { filtro, setCores } = useContext(FilterContext)
 
-  const handleChange = (e) => {
-    if (e.target.checked) {
-      setCoresSelecionadas([...coresSelecionadas, e.target.value])
-    } else {
-      setCoresSelecionadas(coresSelecionadas.filter(item => item !== e.target.value))
-    }
+  const handleChange = ({ target }) => {
+    setCores(target)
   }
 
   return (
@@ -61,8 +58,8 @@ const FormCores = () => {
         {cores.map(item =>
           <div className={classes.corItem} key={item.cor}>
             <label htmlFor={item.cor} style={{ backgroundColor: item.bg, color: item.color }} className={classes.btnCor}>{item.cor}</label>
-            <input type='checkbox' name='cores' id={item.cor} checked={coresSelecionadas.includes(item.cor)} onChange={handleChange} value={item.cor} />
-            {coresSelecionadas.includes(item.cor) && <span className={classes.checked}><IconCheck /></span>}
+            <input type='checkbox' name='cores' id={item.cor} value={item.cor} onChange={handleChange} checked={filtro.cores.includes(item.cor)} />
+            {filtro.cores.includes(item.cor) && <span className={classes.checked}><IconCheck /></span>}
           </div>
         )}
       </form>

@@ -1,5 +1,4 @@
 import React from 'react'
-import WrapperButton from '../utilities/WrapperButton';
 import classes from './Filtro.module.css'
 import FormCategoria from './FormCategoria'
 import FormCores from './FormCores';
@@ -13,7 +12,6 @@ const Filtro = () => {
       <FormCategoria />
       <FormCores />
       <FormPreco />
-      <WrapperButton className={classes.button}>Aplicar filtro</WrapperButton>
     </section>
   )
 }

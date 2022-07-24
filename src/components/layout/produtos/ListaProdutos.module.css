@@ -1,0 +1,17 @@
+.produtos {
+  padding: 2rem 3rem
+}
+
+.produtos h1 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.produtos ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: start;
+  grid-gap: 2.5rem;
+  list-style: none;
+}

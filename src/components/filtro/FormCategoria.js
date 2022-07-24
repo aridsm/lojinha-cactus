@@ -1,39 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import { FilterContext } from '../../context/FilterContext'
 import WrapperFiltroSection from '../utilities/WrapperFiltroSection'
 import classes from './FormCategoria.module.css'
 
-const CheckboxCategoria = ({ id, option, lista, setLista }) => {
-  const handleChange = (e) => {
-    if (e.target.checked) {
-      setLista([...lista, e.target.value])
-    } else {
-      setLista(lista.filter(item => item !== e.target.value))
-    }
+const CheckboxCategoria = ({ nome, lista, setCategorias }) => {
+
+  const handleChange = ({ target }) => {
+    setCategorias(target)
   }
 
   return (
-    <label htmlFor={id}>
-      {option}
-      <input type='checkbox' name='categoria' id={id} value={option} onChange={handleChange} checked={lista.includes(option)} />
+    <label htmlFor={nome}>
+      {nome}
+      <input type='checkbox' name='categoria' id={nome} value={nome} onChange={handleChange} checked={lista.includes(nome)} />
     </label>
   )
 }
 
+const categorias = ['flores', 'cactos', 'outros']
+
 const FormCategoria = () => {
-  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([])
 
-  useEffect(() => {
-    console.log(categoriasSelecionadas)
-
-  }, [categoriasSelecionadas])
-
+  const { filtro, setCategorias } = useContext(FilterContext)
 
   return (
     <WrapperFiltroSection title='Categorias'>
       <form className={classes.form}>
-        <CheckboxCategoria id='check1' option='flores' lista={categoriasSelecionadas} setLista={setCategoriasSelecionadas} />
-        <CheckboxCategoria id='check2' option='cactos' lista={categoriasSelecionadas} setLista={setCategoriasSelecionadas} />
-        <CheckboxCategoria id='check3' option='outros' lista={categoriasSelecionadas} setLista={setCategoriasSelecionadas} />
+        {categorias.map(categoria =>
+          <CheckboxCategoria key={categoria} nome={categoria} lista={filtro.categorias} setCategorias={setCategorias} />
+        )}
       </form>
     </WrapperFiltroSection>
 

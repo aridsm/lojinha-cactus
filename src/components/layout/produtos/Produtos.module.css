@@ -3,20 +3,3 @@
   grid-template-columns: auto 1fr;
   padding-top: 4rem;
 }
-
-.produtos {
-  padding: 2rem 3rem
-}
-
-.produtos h1 {
-  font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: 4rem;
-}
-
-.produtos ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  grid-gap: 2.5rem;
-  list-style: none;
-}
