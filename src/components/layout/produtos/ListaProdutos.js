@@ -27,17 +27,15 @@ const ListaProdutos = () => {
     setProdutosExibidos(produtos.slice(indexPagAnterior, indexPagAtual))
   }, [pagAtual, produtos])
 
-  useEffect(() => {
-    console.log(pagAtual)
-  }, [pagAtual])
-
   const listaProdutos = produtosExibidos.map(produto =>
     <ProdutoItem key={produto.nome} nome={produto.nome} preco={produto.preco} img={produto.img} />
   );
 
+  const resultados = <p className={classes.results}>Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} - {produtos.length} resultados</p>;
+
   return (
     <section className={classes.produtos}>
-      <p className={classes.results}>Página {pagAtual} / {produtos.length} resultados</p>
+      {resultados}
       <h1>Catálogo</h1>
       {produtos.length ?
         <>

@@ -1,5 +1,4 @@
 import React, { createContext, useReducer } from 'react'
-import { todos_produtos } from '../lista_produtos';
 
 export const FilterContext = createContext();
 
@@ -31,9 +30,7 @@ const filtroReducer = (state, action) => {
     return { ...state, valores: updatedValores }
   }
 }
-/*
 
-*/
 const FilterContextProvider = ({ children }) => {
 
   const [filtro, dispatchFiltro] = useReducer(filtroReducer, filtro_inicial);

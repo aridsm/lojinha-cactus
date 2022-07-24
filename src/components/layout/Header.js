@@ -4,7 +4,7 @@ import { ReactComponent as IconCart } from '../../assets/cart.svg'
 import { ReactComponent as IconPerson } from '../../assets/person.svg'
 import WrapperButton from '../utilities/WrapperButton'
 
-const Header = () => {
+const Header = ({ onShow }) => {
   return (
     <header className={classes.header}>
       <span className={classes.logo}>Cactus</span>
@@ -13,7 +13,7 @@ const Header = () => {
         <input type='search' name='search' id='search' placeholder='O que voce procura?' />
         <WrapperButton>Procurar</WrapperButton>
       </form>
-      <button className={classes.carrinho}>
+      <button className={classes.carrinho} onClick={onShow}>
         Seu carrinho <span className={classes.quantidade}>
           <IconCart />
           <span className={classes.valor}>1</span>
