@@ -9,13 +9,14 @@ const ListaProdutos = () => {
   const [pagAtual, setPagAtual] = useState(1);
   const itensPorPag = 12;
   const [produtos, setProdutos] = useState(todos_produtos);
-  const [produtosExibidos, setProdutosExibidos] = useState(produtos)
+  const [produtosExibidos, setProdutosExibidos] = useState([])
   const { filtro } = useContext(FilterContext);
 
   const { categorias, cores, valores } = filtro;
 
   useEffect(() => {
     const filteredProdutos = todos_produtos.filter(produto => categorias.indexOf(produto.categoria) >= 0).filter(produto => cores.indexOf(produto.cor) >= 0).filter(produto => +produto.preco >= valores.min && +produto.preco <= valores.max);
+    setPagAtual(1)
     setProdutos(filteredProdutos)
 
   }, [categorias, cores, valores.min, valores.max])
@@ -36,12 +37,13 @@ const ListaProdutos = () => {
 
   return (
     <section className={classes.produtos}>
-      <p>{itensPorPag * pagAtual} - {produtos.length} resultados ERRADO REFAZER.</p>
-      <h1>Todas as categorias</h1>
+      <p className={classes.results}>Página {pagAtual} / {produtos.length} resultados</p>
+      <h1>Catálogo</h1>
       {produtos.length ?
         <>
-          <ProdutosPagination produtos={produtos} itensPorPag={itensPorPag} setPagAtual={setPagAtual} />
+          <ProdutosPagination produtos={produtos} itensPorPag={itensPorPag} setPagAtual={setPagAtual} pagAtual={pagAtual} />
           <ul>{listaProdutos}</ul>
+          <ProdutosPagination produtos={produtos} itensPorPag={itensPorPag} setPagAtual={setPagAtual} pagAtual={pagAtual} />
         </>
         :
         <p>Ops, não foi encontrado nenhum resultado para a sua pesquisa.</p>}

@@ -1,10 +1,17 @@
 .nav {
   display: flex;
-  margin-bottom: 2rem;
   justify-content: flex-end;
 }
 
-.nav .pagNumber {
-  width: 2rem;
+.nav button {
   height: 2.5rem;
+  transition: .05s;
+}
+
+.pagNumber {
+  width: 2rem;
+}
+
+.nav button:hover {
+  color: var(--cor-2);
 }

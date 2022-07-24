@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react'
+import { todos_produtos } from '../lista_produtos';
 
 export const FilterContext = createContext();
 
@@ -8,7 +9,7 @@ const filtro_inicial = {
   valores: {
     min: '0',
     max: '1000'
-  }
+  },
 }
 
 const filtroReducer = (state, action) => {

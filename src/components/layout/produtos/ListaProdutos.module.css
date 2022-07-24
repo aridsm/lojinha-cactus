@@ -1,11 +1,11 @@
 .produtos {
-  padding: 2rem 3rem
+  padding: 2rem 3rem 5rem 3rem
 }
 
 .produtos h1 {
   font-weight: 500;
   font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .produtos ul {
@@ -14,4 +14,11 @@
   justify-content: start;
   grid-gap: 2.5rem;
   list-style: none;
+  margin: 2rem 0;
+}
+
+.results {
+  color: var(--cor-2);
+  margin-bottom: .5rem;
+  font-size: .85rem;
 }
