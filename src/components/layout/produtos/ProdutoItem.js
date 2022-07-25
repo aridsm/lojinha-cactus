@@ -13,7 +13,7 @@ const ProdutoItem = ({ nome, img, preco }) => {
     addItem({
       nome: nome,
       preco: preco,
-      quantidade: quantidade,
+      quantidade: +quantidade,
       img: img
     })
   }
