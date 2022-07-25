@@ -1,0 +1,16 @@
+.modal {
+  padding: 2rem;
+  text-align: center;
+}
+
+.parabens {
+  text-transform: uppercase;
+  color: var(--cor-2);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  margin-top: 3rem;
+}

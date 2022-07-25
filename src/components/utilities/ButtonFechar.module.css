@@ -1,0 +1,22 @@
+.button {
+  background: var(--cor-5);
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 3rem;
+  height: 3rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  color: var(--cor-6);
+  display: grid;
+  place-items: center;
+  transition: .1s;
+}
+
+.button svg {
+  transform: scale(1.5);
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
