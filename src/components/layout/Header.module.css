@@ -27,6 +27,12 @@
   display: flex;
   align-items: center;
   padding: .7rem;
+  transition: .1s;
+}
+
+.carrinho:hover,
+.conta:hover {
+  color: var(--cor-2)
 }
 
 .carrinho svg,

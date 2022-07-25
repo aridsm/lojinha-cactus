@@ -12,3 +12,9 @@
   font-weight: 400;
   margin-bottom: 2rem;
 }
+
+.btn {
+  margin-top: 2rem;
+  margin-left: auto;
+  display: block;
+}

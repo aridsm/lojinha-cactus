@@ -29,6 +29,9 @@ const filtroReducer = (state, action) => {
     const updatedValores = { ...state.valores, max: action.value }
     return { ...state, valores: updatedValores }
   }
+  if (action.type === 'LIMPAR_FILTRO') {
+    return filtro_inicial
+  }
 }
 
 const FilterContextProvider = ({ children }) => {
@@ -47,8 +50,11 @@ const FilterContextProvider = ({ children }) => {
   const updateFilterValorMax = (value) => {
     dispatchFiltro({ type: 'VALOR_MAX', value })
   }
+  const limparFiltro = () => {
+    dispatchFiltro({ type: 'LIMPAR_FILTRO' })
+  }
   return (
-    <FilterContext.Provider value={{ filtro, setCategorias: updateFilterCategorias, setCores: updateFilterCores, setValorMin: updateFilterValorMin, setValorMax: updateFilterValorMax }}>
+    <FilterContext.Provider value={{ filtro, setCategorias: updateFilterCategorias, setCores: updateFilterCores, setValorMin: updateFilterValorMin, setValorMax: updateFilterValorMax, limparFiltro: limparFiltro }}>
       {children}
     </FilterContext.Provider>
   )
