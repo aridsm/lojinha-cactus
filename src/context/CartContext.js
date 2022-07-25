@@ -1,17 +1,29 @@
-import { act } from '@testing-library/react';
 import React, { createContext, useReducer } from 'react'
 
 export const CartContext = createContext();
 
 const initialState = {
   itens: [],
-  quantidade: 0,
+  total: 0,
 }
 
 const reducerCart = (state, action) => {
   if (action.type === 'ADD_ITEM') {
-    let novaListaItens = [...state.itens, action.item]
-    return { ...state, itens: novaListaItens }
+    const indiceItemNoCarrinho = state.itens.findIndex(item => item.nome === action.item.nome);
+    const itemJaExiste = state.itens[indiceItemNoCarrinho];
+    let novaListaItens;
+    if (itemJaExiste) {
+      const itemAtualizado = { ...itemJaExiste, quantidade: itemJaExiste.quantidade + action.item.quantidade };
+      novaListaItens = [...state.itens];
+      novaListaItens[indiceItemNoCarrinho] = itemAtualizado;
+    } else {
+      novaListaItens = [...state.itens, action.item];
+    }
+    const totalAtualizado = state.total + action.item.preco * action.item.quantidade;
+    return { itens: novaListaItens, total: totalAtualizado }
+  };
+  if (action.type === 'DELETAR_ITEM') {
+
   }
 }
 

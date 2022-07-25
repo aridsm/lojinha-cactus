@@ -3,10 +3,8 @@ import classes from './CartItem.module.css';
 
 const CarItem = ({ nome, preco, img, quantidade }) => {
 
-
   useEffect(() => {
-    console.log(img)
-  }, [img])
+  }, [])
 
   return (
     <li className={classes.item}>
@@ -15,7 +13,8 @@ const CarItem = ({ nome, preco, img, quantidade }) => {
       </div>
       <div className={classes.infos}>
         <p>{nome}</p>
-        <p className={classes.preco}>R$ {preco}</p>
+        <p className={classes.preco}>R$ {Number(preco * quantidade).toFixed(2)}</p>
+        <p className={classes.unidade}>{quantidade} unidade(s) de {Number(preco).toFixed(2)}</p>
         <button className={classes.btn}>Excluir item</button>
       </div>
       <form>

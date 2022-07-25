@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import classes from './Header.module.css'
 import { ReactComponent as IconCart } from '../../assets/cart.svg'
 import { ReactComponent as IconPerson } from '../../assets/person.svg'
 import WrapperButton from '../utilities/WrapperButton'
+import { CartContext } from '../../context/CartContext'
 
 const Header = ({ onShow }) => {
+
+  const { itensCart } = useContext(CartContext);
+
+  const totalItensNoCarrinho = itensCart.itens.reduce((prev, curr) => {
+    return prev + curr.quantidade;
+  }, 0);
+
   return (
     <header className={classes.header}>
       <span className={classes.logo}>Cactus</span>
@@ -16,7 +24,7 @@ const Header = ({ onShow }) => {
       <button className={classes.carrinho} onClick={onShow}>
         Seu carrinho <span className={classes.quantidade}>
           <IconCart />
-          <span className={classes.valor}>1</span>
+          <span className={classes.valor}>{totalItensNoCarrinho}</span>
         </span>
       </button>
       <button className={classes.conta}>Sua conta <IconPerson /></button>

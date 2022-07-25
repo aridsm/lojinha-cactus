@@ -24,7 +24,7 @@ const Cart = ({ onClose }) => {
         {itensCart.itens.map(item => <CartItem key={item.nome} nome={item.nome} preco={item.preco} img={item.img} quantidade={item.quantidade} />)}
       </ul>
       <div className={classes.total}>
-        <p>Subtotal: <span>R$ 127.45</span></p>
+        <p>Subtotal: <span>R$ {Number(itensCart.total).toFixed(2)}</span></p>
         <WrapperButton>Finalizar compra</WrapperButton>
       </div>
       <button className={classes.btnFechar} onClick={onClose}><IconFechar /></button>
