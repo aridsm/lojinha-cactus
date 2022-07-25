@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import classes from './ProdutosPagination.module.css';
 
 const ProdutosPagination = ({ produtos, itensPorPag, setPagAtual, pagAtual }) => {
@@ -11,7 +11,8 @@ const ProdutosPagination = ({ produtos, itensPorPag, setPagAtual, pagAtual }) =>
   }
 
   const handleClickNumber = (e) => {
-    setPagAtual(e.currentTarget.innerText)
+    setPagAtual(e.currentTarget.innerText);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   const handleClickPage = (pageValue) => {
@@ -21,6 +22,7 @@ const ProdutosPagination = ({ produtos, itensPorPag, setPagAtual, pagAtual }) =>
     if (pageValue > +totalPaginas) {
       return;
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setPagAtual(pageValue)
   }
 

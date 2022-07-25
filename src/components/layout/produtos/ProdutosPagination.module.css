@@ -12,6 +12,10 @@
   width: 2rem;
 }
 
+.pagNumber.ativo {
+  border: 1px solid red
+}
+
 .nav button:hover {
   color: var(--cor-2);
 }

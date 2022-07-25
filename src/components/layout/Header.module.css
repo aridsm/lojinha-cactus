@@ -4,7 +4,7 @@
   background: var(--cor-1);
   padding: 1.2rem 2rem;
   height: 4rem;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgb(228, 228, 228);
   position: fixed;
   z-index: 999;

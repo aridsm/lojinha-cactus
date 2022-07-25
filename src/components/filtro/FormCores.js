@@ -23,8 +23,8 @@ const cores = [{
   color: '#1F3556'
 }, {
   cor: 'vermelho',
-  bg: '#F55A5A',
-  color: '#5C1111'
+  bg: '#F56F6B',
+  color: '#520F0F'
 }, {
   cor: 'roxo',
   bg: '#B796FE',

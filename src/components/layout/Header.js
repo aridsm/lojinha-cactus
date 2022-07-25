@@ -35,7 +35,7 @@ const Header = ({ onShow }) => {
     resizeWindow();
   }, [])
 
-  const btnMenu = <button className={`${classes.btnMenu} ${menuVisible ? classes.menuVisible : ''}`} onClick={() => setMenuVisible(true)} ref={refBtnMenu}><IconMenu /></button>;
+  const btnMenu = <button className={`${classes.btnMenu} ${menuVisible ? classes.menuVisible : ''}`} onClick={() => setMenuVisible(true)} ref={refBtnMenu} aria-label='abrir menu'><IconMenu /></button>;
 
   return (
     <header className={classes.header}>
