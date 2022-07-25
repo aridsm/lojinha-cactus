@@ -28,7 +28,7 @@ const ProdutosPagination = ({ produtos, itensPorPag, setPagAtual, pagAtual }) =>
     <nav className={classes.nav}>
       <button onClick={() => handleClickPage(+pagAtual - 1)}>Anterior</button>
       {paginas.map(pag => <button key={pag} onClick={handleClickNumber} className={classes.pagNumber}>{pag}</button>)}
-      <button onClick={() => handleClickPage(+pagAtual + 1)}>Proximo</button>
+      <button onClick={() => handleClickPage(+pagAtual + 1)}>Próximo</button>
     </nav>
   )
 }

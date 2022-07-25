@@ -4,14 +4,14 @@ export const todos_produtos = [
     preco: '42.49',
     img: 'img1.webp',
     categoria: 'flores',
-    cor: 'laranja'
+    cor: 'rosa'
   },
   {
     nome: 'Duis commodo',
     preco: '24.99',
     img: 'img2.webp',
     categoria: 'flores',
-    cor: 'vermelho',
+    cor: 'roxo',
   },
   {
     nome: 'Ligula ipsum',
@@ -84,7 +84,7 @@ export const todos_produtos = [
     preco: '38.25',
     img: 'img12.webp',
     categoria: 'flores',
-    cor: 'rosa',
+    cor: 'laranja',
   },
   {
     nome: 'Eget facilisis',
@@ -259,7 +259,7 @@ export const todos_produtos = [
     preco: '32.15',
     img: 'img37.webp',
     categoria: 'flores',
-    cor: 'roxo',
+    cor: 'vermelho',
   },
   {
     nome: 'Duis nisi ',

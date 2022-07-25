@@ -31,7 +31,7 @@ const ListaProdutos = () => {
     <ProdutoItem key={produto.nome} nome={produto.nome} preco={produto.preco} img={produto.img} />
   );
 
-  const resultados = <p className={classes.results}>Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} - {produtos.length} resultados</p>;
+  const resultados = <p className={classes.results}>Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} | {produtos.length} resultados</p>;
 
   return (
     <section className={classes.produtos}>
@@ -44,7 +44,7 @@ const ListaProdutos = () => {
           <ProdutosPagination produtos={produtos} itensPorPag={itensPorPag} setPagAtual={setPagAtual} pagAtual={pagAtual} />
         </>
         :
-        <p>Ops, não foi encontrado nenhum resultado para a sua pesquisa.</p>}
+        <p className={classes.erro}>Ops, não foi encontrado nenhum resultado para a sua pesquisa.</p>}
     </section>
   )
 }

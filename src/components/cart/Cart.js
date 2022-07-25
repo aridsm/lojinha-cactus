@@ -9,19 +9,18 @@ import { ReactComponent as IconFechar } from '../../assets/x.svg'
 
 const Cart = ({ onClose }) => {
 
-  const { itensCart } = useContext(CartContext);
+  const { itensCart, updateQuantidade, removeItem, removeAll } = useContext(CartContext);
 
-  useEffect(() => {
-    console.log(itensCart)
-  }, [itensCart])
+  const listaItensCart = itensCart.itens.map(item => <CartItem key={item.nome} nome={item.nome} preco={item.preco} img={item.img} quantidade={item.quantidade} updateQuantidade={updateQuantidade} removeItem={removeItem} />);
+
   return (
     <Modal onClose={onClose}>
       <div className={classes.header}>
         <p>Seu carrinho</p>
-        <button>Esvaziar carrinho</button>
+        <button onClick={removeAll}>Esvaziar carrinho</button>
       </div>
       <ul className={classes.cartLista}>
-        {itensCart.itens.map(item => <CartItem key={item.nome} nome={item.nome} preco={item.preco} img={item.img} quantidade={item.quantidade} />)}
+        {itensCart.itens.length ? listaItensCart : <p className={classes.semItens}>Não há itens no seu carrinho.</p>}
       </ul>
       <div className={classes.total}>
         <p>Subtotal: <span>R$ {Number(itensCart.total).toFixed(2)}</span></p>

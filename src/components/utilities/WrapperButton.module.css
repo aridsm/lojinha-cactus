@@ -1,5 +1,5 @@
 .button {
-  padding: .8rem 1rem;
+  padding: .5rem 1rem;
   background: radial-gradient(100% 100% at 50.27% 0%, var(--cor-3) 0%, var(--cor-2) 100%);
   color: var(--cor-4);
   border-radius: .2rem;
