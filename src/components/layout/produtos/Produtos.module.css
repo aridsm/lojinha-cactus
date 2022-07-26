@@ -3,3 +3,9 @@
   grid-template-columns: auto 1fr;
   padding-top: 4rem;
 }
+
+@media all and (max-width: 925px) {
+  .main {
+    grid-template-columns: auto;
+  }
+}

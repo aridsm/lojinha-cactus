@@ -1,7 +1,7 @@
 .filtro {
   background: var(--cor-1);
   padding: 2rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem);
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.05);
   border-right: 1px solid rgb(228, 228, 228);
 }
@@ -17,4 +17,27 @@
   margin-top: 2rem;
   margin-left: auto;
   display: block;
+}
+
+.btnAbrirFiltro {
+  display: none;
+}
+
+@media all and (max-width: 925px) {
+  .filtro {
+    border-bottom: 1px solid rgb(228, 228, 228);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 4rem;
+    overflow: auto;
+    z-index: 99;
+    max-height: calc(100vh - 4rem);
+  }
+
+  .btnAbrirFiltro {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 6rem
+  }
 }

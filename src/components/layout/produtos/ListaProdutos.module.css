@@ -26,3 +26,9 @@
 .erro {
   margin-top: 4rem;
 }
+
+@media all and (max-width: 925px) {
+  .produtos {
+    padding: 2rem 1rem 5rem 1rem
+  }
+}

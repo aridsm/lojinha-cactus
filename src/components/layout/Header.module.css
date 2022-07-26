@@ -92,8 +92,11 @@
 }
 
 @media all and (max-width: 925px) {
+  .header {
+    padding: 0 1rem
+  }
+
   .menu {
-    display: none;
     flex-direction: column;
     position: absolute;
     right: 1rem;
@@ -103,10 +106,6 @@
     border-radius: .2rem;
     align-items: flex-end;
     padding: 1rem
-  }
-
-  .menu.menuVisible {
-    display: flex;
   }
 
   .menu button {
@@ -123,8 +122,8 @@
   }
 
   .btnMenu {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin-left: auto;
     display: grid;
     place-items: center;
@@ -136,6 +135,6 @@
   }
 
   .btnMenu svg {
-    transform: scale(1.5);
+    transform: scale(2);
   }
 }
