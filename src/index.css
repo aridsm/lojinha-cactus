@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 :root {
@@ -14,6 +14,8 @@
   --cor-5: #7FD878;
   --cor-6: #245320;
   --cor-7: #EDF1ED;
+  scrollbar-color: #b4b4b4 var(--cor-1);
+  scrollbar-width: thin;
 }
 
 body {
@@ -45,4 +47,30 @@ a {
   font-size: inherit;
   font-family: inherit;
   color: inherit
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FBF8
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4b4b4
+}
+
+@media all and (max-width: 550px) {
+
+  body {
+    font-size: 14px;
+  }
 }

@@ -1,7 +1,9 @@
 .main {
   display: grid;
   grid-template-columns: auto 1fr;
+  align-content: start;
   padding-top: 4rem;
+  min-height: calc(100vh - 4rem);
 }
 
 @media all and (max-width: 925px) {

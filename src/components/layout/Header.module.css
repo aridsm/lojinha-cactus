@@ -122,12 +122,17 @@
   }
 
   .btnMenu {
-    width: 2.5rem;
+    min-width: 2.5rem;
     height: 2.5rem;
     margin-left: auto;
     display: grid;
     place-items: center;
     border-radius: .2rem;
+    transition: .1s;
+  }
+
+  .btnMenu:hover {
+    background: var(--cor-7);
   }
 
   .btnMenu.menuVisible {
@@ -136,5 +141,36 @@
 
   .btnMenu svg {
     transform: scale(2);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .header {
+    padding: 0 .5rem
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    margin-right: .8rem;
+  }
+
+  .form {
+    margin-right: .5rem;
+  }
+
+  .form input {
+    min-width: 5rem;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: .2rem
+  }
+
+  .btnMenu {
+    min-width: 2rem;
+    height: 2rem;
+  }
+
+  .btnSearch {
+    padding: 0.2rem 0.5rem
   }
 }

@@ -41,3 +41,25 @@
   border: 1px solid #ccc;
   margin-left: .5rem;
 }
+
+@media all and (max-width: 470px) {
+  .item {
+    grid-template-columns: 4rem 1fr auto;
+    grid-template-rows: 8rem;
+    padding: 1rem 0;
+    grid-gap: .8rem;
+  }
+
+  .imgDiv {
+    margin: auto;
+  }
+
+  .imgDiv img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .item form input {
+    max-width: 2.5rem;
+  }
+}

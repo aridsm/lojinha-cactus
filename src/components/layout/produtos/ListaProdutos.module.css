@@ -1,5 +1,5 @@
 .produtos {
-  padding: 2rem 3rem 5rem 3rem
+  padding: 2rem 3rem 5rem 3rem;
 }
 
 .produtos h1 {
@@ -30,5 +30,10 @@
 @media all and (max-width: 925px) {
   .produtos {
     padding: 2rem 1rem 5rem 1rem
+  }
+
+  .produtos ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
   }
 }

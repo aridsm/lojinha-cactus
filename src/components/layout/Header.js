@@ -3,6 +3,7 @@ import classes from './Header.module.css'
 import { ReactComponent as IconCart } from '../../assets/cart.svg'
 import { ReactComponent as IconPerson } from '../../assets/person.svg'
 import { ReactComponent as IconMenu } from '../../assets/menu.svg'
+import { ReactComponent as IconSearch } from '../../assets/search.svg'
 import WrapperButton from '../utilities/WrapperButton'
 import { CartContext } from '../../context/CartContext'
 import useVisibility from '../../customHook/useVisibility'
@@ -24,8 +25,8 @@ const Header = ({ onShow }) => {
       <span className={classes.logo}>Cactus</span>
       <form className={classes.form}>
         <label htmlFor='search'>Pesquise aqui</label>
-        <input type='search' name='search' id='search' placeholder='O que voce procura?' />
-        <WrapperButton>Procurar</WrapperButton>
+        <input type='search' name='search' id='search' placeholder='O que você procura?' />
+        <WrapperButton className={classes.btnSearch}><IconSearch /></WrapperButton>
       </form>
       {btnMenu}
       {menuVisible &&
