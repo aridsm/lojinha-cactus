@@ -44,5 +44,14 @@
 
   .total {
     padding: 1.2rem;
+    flex-direction: column;
+  }
+
+  .total span {
+    font-size: 1.1rem;
+  }
+
+  .total button {
+    margin-top: .6rem;
   }
 }

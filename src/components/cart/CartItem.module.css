@@ -44,22 +44,27 @@
 
 @media all and (max-width: 470px) {
   .item {
-    grid-template-columns: 4rem 1fr auto;
-    grid-template-rows: 8rem;
+    grid-template-columns: 3rem 1fr;
+    grid-template-rows: 7rem;
     padding: 1rem 0;
     grid-gap: .8rem;
   }
 
-  .imgDiv {
-    margin: auto;
+  form {
+    grid-column: 2;
   }
 
+
   .imgDiv img {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .item form input {
     max-width: 2.5rem;
+  }
+
+  .preco {
+    font-size: 1.1rem;
   }
 }
