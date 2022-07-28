@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lojinha-cactus/static/css/main.62e2755b.css",
-    "main.js": "/lojinha-cactus/static/js/main.e2cb126e.js",
+    "main.css": "/lojinha-cactus/static/css/main.fda47e9c.css",
+    "main.js": "/lojinha-cactus/static/js/main.be8bfdc5.js",
     "static/media/img20.webp": "/lojinha-cactus/static/media/img20.bba56c64530c7502594a.webp",
     "static/media/img23.webp": "/lojinha-cactus/static/media/img23.cc9bbdf8c5c83fc3ad42.webp",
     "static/media/img27.webp": "/lojinha-cactus/static/media/img27.97ea561f48bcd2d196e8.webp",
@@ -50,11 +50,11 @@
     "static/media/x.svg": "/lojinha-cactus/static/media/x.85f9f2a1f603d5a966a44474678a7981.svg",
     "static/media/search.svg": "/lojinha-cactus/static/media/search.b1f781b99ceaafb9c831949bb54ae3cd.svg",
     "static/media/check.svg": "/lojinha-cactus/static/media/check.1380d44f18913e79a375738e8ba0b3f6.svg",
-    "main.62e2755b.css.map": "/lojinha-cactus/static/css/main.62e2755b.css.map",
-    "main.e2cb126e.js.map": "/lojinha-cactus/static/js/main.e2cb126e.js.map"
+    "main.fda47e9c.css.map": "/lojinha-cactus/static/css/main.fda47e9c.css.map",
+    "main.be8bfdc5.js.map": "/lojinha-cactus/static/js/main.be8bfdc5.js.map"
   },
   "entrypoints": [
-    "static/css/main.62e2755b.css",
-    "static/js/main.e2cb126e.js"
+    "static/css/main.fda47e9c.css",
+    "static/js/main.be8bfdc5.js"
   ]
 }
