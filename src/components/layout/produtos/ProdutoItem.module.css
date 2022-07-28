@@ -5,7 +5,6 @@
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
-
 .card img {
   display: block;
   width: 100%;
@@ -50,4 +49,54 @@
 .btn {
   width: 100%;
   margin-top: .5rem;
+}
+
+.btnAlert {
+  position: relative;
+}
+
+.alertAdd {
+  position: absolute;
+  background: var(--cor-5);
+  color: var(--cor-6);
+  height: 2rem;
+  width: 2rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  top: -2rem;
+  right: 0;
+  animation: animaAlert 1s forwards;
+}
+
+@keyframes animaAlert {
+  from {
+    top: -2rem;
+    opacity: 1;
+  }
+
+  to {
+    top: -5rem;
+    opacity: 0;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .preco {
+    font-size: 1.4rem;
+  }
+
+  .reais {
+    top: -.4rem;
+  }
+
+  .card .infos {
+    padding: .5rem;
+  }
+
+  .btn {
+    padding: .5rem
+  }
+
 }

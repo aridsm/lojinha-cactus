@@ -71,6 +71,6 @@ input[type="search"]::-webkit-search-results-decoration {
 @media all and (max-width: 550px) {
 
   body {
-    font-size: 13px;
+    font-size: 12px;
   }
 }

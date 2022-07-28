@@ -37,3 +37,10 @@
     grid-gap: 1rem;
   }
 }
+
+@media all and (max-width: 550px) {
+  .produtos ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .5rem
+  }
+}
