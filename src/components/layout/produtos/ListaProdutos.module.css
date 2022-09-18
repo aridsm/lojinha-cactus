@@ -1,5 +1,5 @@
 .produtos {
-  padding: 2rem 3rem 5rem 3rem;
+  padding: 3rem 4rem 5rem 4rem;
 }
 
 .produtos h1 {
@@ -10,17 +10,17 @@
 
 .produtos ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   justify-content: start;
-  grid-gap: 1.5rem;
+  grid-gap: 2rem;
   list-style: none;
   margin: 2rem 0;
 }
 
 .results {
   color: var(--cor-2);
-  margin-bottom: .5rem;
-  font-size: .85rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
 }
 
 .erro {
@@ -29,7 +29,7 @@
 
 @media all and (max-width: 925px) {
   .produtos {
-    padding: 2rem 1rem 5rem 1rem
+    padding: 2rem 1rem 5rem 1rem;
   }
 
   .produtos ul {
@@ -41,6 +41,6 @@
 @media all and (max-width: 550px) {
   .produtos ul {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: .5rem
+    grid-gap: 0.5rem;
   }
 }

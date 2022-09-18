@@ -4,8 +4,7 @@
   background: var(--cor-1);
   padding: 1.2rem 2rem;
   height: 4rem;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgb(228, 228, 228);
+  border-bottom: 1px solid rgb(219, 219, 219);
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -14,7 +13,7 @@
 .logo {
   font-size: 2rem;
   margin-right: 2rem;
-  font-family: 'Ribeye Marrow', cursive;
+  font-family: "Ribeye Marrow", cursive;
 }
 
 .carrinho {
@@ -25,21 +24,21 @@
 .conta {
   display: flex;
   align-items: center;
-  padding: .7rem;
-  transition: .1s;
+  padding: 0.7rem;
+  transition: 0.1s;
   text-align: right;
 }
 
 .carrinho:hover,
 .conta:hover {
-  color: var(--cor-2)
+  color: var(--cor-2);
 }
 
 .carrinho svg,
 .conta svg {
   transform: scale(1.3);
   width: 30px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .form {
@@ -51,9 +50,9 @@
 
 .form input {
   background: var(--cor-7);
-  border-radius: .2rem;
-  padding: .5rem;
-  margin-right: .5rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
   flex: 1;
 }
 
@@ -77,7 +76,7 @@
   background: var(--cor-5);
   color: var(--cor-6);
   font-weight: bold;
-  font-size: .75rem;
+  font-size: 0.75rem;
   display: grid;
   place-items: center;
 }
@@ -93,7 +92,7 @@
 
 @media all and (max-width: 925px) {
   .header {
-    padding: 0 1rem
+    padding: 0 1rem;
   }
 
   .menu {
@@ -103,9 +102,9 @@
     top: 3.8rem;
     background: var(--cor-1);
     box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
-    border-radius: .2rem;
+    border-radius: 0.2rem;
     align-items: flex-end;
-    padding: 1rem
+    padding: 1rem;
   }
 
   .menu button {
@@ -127,8 +126,8 @@
     margin-left: auto;
     display: grid;
     place-items: center;
-    border-radius: .2rem;
-    transition: .1s;
+    border-radius: 0.2rem;
+    transition: 0.1s;
   }
 
   .btnMenu:hover {
@@ -136,7 +135,7 @@
   }
 
   .btnMenu.menuVisible {
-    border: 1px solid var(--cor-2)
+    border: 1px solid var(--cor-2);
   }
 
   .btnMenu svg {
@@ -146,23 +145,23 @@
 
 @media all and (max-width: 500px) {
   .header {
-    padding: 0 .5rem
+    padding: 0 0.5rem;
   }
 
   .logo {
     font-size: 1.1rem;
-    margin-right: .8rem;
+    margin-right: 0.8rem;
   }
 
   .form {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 
   .form input {
     min-width: 5rem;
     width: 100%;
     font-size: 0.8rem;
-    padding: .2rem
+    padding: 0.2rem;
   }
 
   .btnMenu {
@@ -171,6 +170,6 @@
   }
 
   .btnSearch {
-    padding: 0.2rem 0.5rem
+    padding: 0.2rem 0.5rem;
   }
 }

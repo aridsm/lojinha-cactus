@@ -30,7 +30,7 @@
 }
 
 .semItens {
-  padding: 2rem 0 3rem 0
+  padding: 2rem 0 3rem 0;
 }
 
 @media all and (max-width: 470px) {
@@ -52,6 +52,6 @@
   }
 
   .total button {
-    margin-top: .6rem;
+    margin-top: 0.6rem;
   }
 }

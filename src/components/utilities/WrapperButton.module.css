@@ -1,15 +1,14 @@
 .button {
-  padding: .5rem 1rem;
-  background: radial-gradient(100% 100% at 50.27% 0%, var(--cor-3) 0%, var(--cor-2) 100%);
+  padding: 0.8rem 1rem;
+  background-color: var(--cor-2);
   color: var(--cor-4);
-  border-radius: .2rem;
   border: none;
-  transition: .1s;
+  transition: 0.1s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-  transform: scale(1.1);
+  background-color: var(--cor-3);
 }
 
 @media all and (max-width: 700px) {

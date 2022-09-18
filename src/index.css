@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Ribeye+Marrow&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Ribeye+Marrow&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,22 +7,24 @@
 }
 
 :root {
-  --cor-1: #F8FBF8;
-  --cor-2: #F17CAD;
-  --cor-3: #FE96C2;
-  --cor-4: #570B2B;
-  --cor-5: #7FD878;
+  --cor-1: #e7f4ed;
+  --cor-2: #fbb1d0;
+  --cor-3: #fe96c2;
+  --cor-4: #570b2b;
+  --cor-5: #7fd878;
   --cor-6: #245320;
-  --cor-7: #EDF1ED;
+  --cor-7: #f0f6f3;
+  --cor-bg: #f0f6f3;
   scrollbar-color: #b4b4b4 var(--cor-1);
   scrollbar-width: thin;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  color: rgb(49, 49, 49)
+  font-size: 15px;
+  background-color: var(--cor-bg);
+  color: rgb(49, 49, 49);
 }
 
 input {
@@ -37,7 +39,7 @@ a {
 button {
   cursor: pointer;
   background: none;
-  border: none
+  border: none;
 }
 
 button,
@@ -46,7 +48,7 @@ a {
   font-weight: inherit;
   font-size: inherit;
   font-family: inherit;
-  color: inherit
+  color: inherit;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -61,15 +63,14 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8FBF8
+  background: #f8fbf8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b4b4b4
+  background: #b4b4b4;
 }
 
 @media all and (max-width: 550px) {
-
   body {
     font-size: 12px;
   }
