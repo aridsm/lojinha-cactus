@@ -5,6 +5,15 @@
 
 .nav button {
   height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+
+.nav svg {
+  color: inherit;
+  width: 0.5rem;
+  right: 0.5rem;
 }
 
 .pagNumber {
@@ -12,17 +21,12 @@
 }
 
 .nav button:hover {
-  text-decoration: underline;
-}
-
-.nav button + button {
-  margin-left: 0.5rem;
+  color: var(--cor-2);
 }
 
 .pagAtual {
   border-radius: 0.2rem;
-  color: var(--cor-4);
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background: #e8efed;
 }
 
 @media all and (max-width: 550px) {

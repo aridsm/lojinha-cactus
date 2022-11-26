@@ -1,5 +1,7 @@
 import React from "react";
 import classes from "./ProdutosPagination.module.css";
+import { ReactComponent as ArrowLeft } from "../../../assets/arrow-left.svg";
+import { ReactComponent as ArrowRight } from "../../../assets/arrow-right.svg";
 
 const ProdutosPagination = ({
   produtos,
@@ -32,7 +34,9 @@ const ProdutosPagination = ({
 
   return (
     <nav className={classes.nav}>
-      <button onClick={() => handleClickPage(+pagAtual - 1)}>Anterior</button>
+      <button onClick={() => handleClickPage(+pagAtual - 1)}>
+        <ArrowLeft />
+      </button>
       {paginas.map((pag) => (
         <button
           key={pag}
@@ -44,7 +48,9 @@ const ProdutosPagination = ({
           {pag}
         </button>
       ))}
-      <button onClick={() => handleClickPage(+pagAtual + 1)}>Próximo</button>
+      <button onClick={() => handleClickPage(+pagAtual + 1)}>
+        <ArrowRight />
+      </button>
     </nav>
   );
 };

@@ -42,25 +42,16 @@ const ListaProdutos = () => {
     />
   ));
 
-  const resultados = (
-    <p className={classes.results}>
-      Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} |
-      {produtos.length} resultados
-    </p>
-  );
-
   return (
     <section className={classes.produtos}>
-      <HeaderProdutos />
-      {resultados}
+      <HeaderProdutos
+        produtos={produtos}
+        itensPorPag={itensPorPag}
+        pagAtual={pagAtual}
+        setPagAtual={setPagAtual}
+      />
       {produtos.length ? (
         <>
-          <ProdutosPagination
-            produtos={produtos}
-            itensPorPag={itensPorPag}
-            setPagAtual={setPagAtual}
-            pagAtual={pagAtual}
-          />
           <ul>{listaProdutos}</ul>
           <ProdutosPagination
             produtos={produtos}

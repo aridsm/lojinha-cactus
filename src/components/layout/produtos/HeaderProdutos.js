@@ -1,12 +1,25 @@
 import React from "react";
 import classes from "./HeaderProdutos.module.css";
+import ProdutosPagination from "./ProdutosPagination";
 
-const HeaderProdutos = () => {
+const HeaderProdutos = ({ produtos, itensPorPag, pagAtual, setPagAtual }) => {
+  const resultados = (
+    <p className={classes.results}>
+      Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} |
+      <span>{produtos.length}</span> resultados
+    </p>
+  );
+
   return (
     <>
       <div className={classes.divPaginas}>
-        <div>results</div>
-        <div> 1 2 3</div>
+        <div>{resultados}</div>
+        <ProdutosPagination
+          produtos={produtos}
+          itensPorPag={itensPorPag}
+          setPagAtual={setPagAtual}
+          pagAtual={pagAtual}
+        />
       </div>
     </>
   );

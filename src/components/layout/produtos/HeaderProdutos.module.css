@@ -5,3 +5,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.results span {
+  color: var(--cor-2);
+  font-weight: 700;
+  margin-left: 0.3rem;
+}
