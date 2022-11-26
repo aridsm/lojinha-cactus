@@ -65,7 +65,7 @@
 
 .form input {
   background: var(--cor-bg);
-  border-radius: 0.2rem;
+  border-radius: 10px;
   padding: 0.9rem 3rem 0.9rem 0.9rem;
   margin-right: 0.5rem;
   flex: 1;
@@ -83,8 +83,8 @@
 
 .iconSearch {
   color: rgba(89, 89, 95, 0.5);
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   position: absolute;
   right: 1.5rem;
   top: 1rem;

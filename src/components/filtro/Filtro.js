@@ -27,6 +27,8 @@ const Filtro = () => {
     </button>
   );
 
+  const aplicarFiltro = () => {};
+
   return (
     <>
       <div ref={refBtnFiltro} className={classes.filtroContainer}>
@@ -45,9 +47,11 @@ const Filtro = () => {
             <FormCategoria />
             <FormCores />
             <FormPreco />
-            <WrapperButton className={classes.btn} onClick={limparFiltro}>
-              Limpar filtro
+
+            <WrapperButton className={classes.btn} onClick={aplicarFiltro}>
+              Aplicar filtro
             </WrapperButton>
+            <button onClick={limparFiltro}>Limpar filtro</button>
           </section>
         )}
       </div>

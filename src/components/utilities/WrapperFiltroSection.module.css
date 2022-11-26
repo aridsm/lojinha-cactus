@@ -1,9 +1,10 @@
-.section+.section {
+.section + .section {
   padding-top: 2rem;
 }
 
 .title {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: .5rem;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }

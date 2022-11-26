@@ -7,14 +7,14 @@
 }
 
 :root {
-  --cor-1: #fff;
+  --cor-1: #f8fbfa;
   --cor-2: #f4a8c4;
   --cor-4: #a63e64;
   --cor-5: #7fd878;
   --cor-6: #245320;
-  --cor-7: #e9f3f0;
+  --cor-7: #eef4f2;
   --cor-bg: #eef4f2;
-  --sombra: 0px 4px 20px #e1eee7;
+  --sombra: 0px 4px 30px hsla(180, 1%, 14%, 0.05);
   scrollbar-color: #b4b4b4 var(--cor-1);
   scrollbar-width: thin;
 }
