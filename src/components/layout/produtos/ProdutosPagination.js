@@ -1,19 +1,23 @@
-import React, { useEffect, useRef } from 'react'
-import classes from './ProdutosPagination.module.css';
+import React from "react";
+import classes from "./ProdutosPagination.module.css";
 
-const ProdutosPagination = ({ produtos, itensPorPag, setPagAtual, pagAtual }) => {
-
-  const paginas = []
+const ProdutosPagination = ({
+  produtos,
+  itensPorPag,
+  setPagAtual,
+  pagAtual,
+}) => {
+  const paginas = [];
   const totalPaginas = Math.ceil(produtos.length / itensPorPag);
-  console.log(paginas, pagAtual)
+  console.log(paginas, pagAtual);
   for (let i = 1; i <= totalPaginas; i++) {
-    paginas.push(i)
+    paginas.push(i);
   }
 
   const handleClickNumber = (e) => {
     setPagAtual(e.currentTarget.innerText);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleClickPage = (pageValue) => {
     if (pageValue < 1) {
@@ -22,17 +26,27 @@ const ProdutosPagination = ({ produtos, itensPorPag, setPagAtual, pagAtual }) =>
     if (pageValue > +totalPaginas) {
       return;
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setPagAtual(pageValue)
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setPagAtual(pageValue);
+  };
 
   return (
     <nav className={classes.nav}>
       <button onClick={() => handleClickPage(+pagAtual - 1)}>Anterior</button>
-      {paginas.map(pag => <button key={pag} onClick={handleClickNumber} className={`${classes.pagNumber} ${+pag === +pagAtual ? classes.pagAtual : ''}`}>{pag}</button>)}
+      {paginas.map((pag) => (
+        <button
+          key={pag}
+          onClick={handleClickNumber}
+          className={`${classes.pagNumber} ${
+            +pag === +pagAtual ? classes.pagAtual : ""
+          }`}
+        >
+          {pag}
+        </button>
+      ))}
       <button onClick={() => handleClickPage(+pagAtual + 1)}>Próximo</button>
     </nav>
-  )
-}
+  );
+};
 
-export default ProdutosPagination
+export default ProdutosPagination;

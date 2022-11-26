@@ -2,9 +2,14 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-content: start;
-  padding-top: 4rem;
   min-height: calc(100vh - 4rem);
-  padding: 6rem 2rem 0 2rem;
+  padding: 8rem 2rem 0 2rem;
+  grid-gap: 3rem;
+}
+
+.navCatalogo {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 @media all and (max-width: 925px) {

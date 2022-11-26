@@ -3,6 +3,12 @@
   padding: 2rem;
   min-height: 100%;
   border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+
+.filtroContainer {
+  grid-row: 2;
+  grid-column: 1;
 }
 
 .filtro h2 {

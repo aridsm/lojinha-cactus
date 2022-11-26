@@ -1,0 +1,7 @@
+.headerProdutos {
+  display: flex;
+}
+.divPaginas {
+  display: flex;
+  justify-content: space-between;
+}

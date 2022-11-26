@@ -1,6 +1,6 @@
 .produtos {
-  padding: 3rem 4rem 5rem 4rem;
-  border: 1px solid red;
+  grid-row: 1 / 4;
+  grid-column: 2;
 }
 
 .produtos h1 {

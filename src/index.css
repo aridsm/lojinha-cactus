@@ -14,6 +14,7 @@
   --cor-6: #245320;
   --cor-7: #e9f3f0;
   --cor-bg: #eef4f2;
+  --sombra: 0px 4px 20px #e1eee7;
   scrollbar-color: #b4b4b4 var(--cor-1);
   scrollbar-width: thin;
 }

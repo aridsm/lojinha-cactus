@@ -10,12 +10,23 @@
   z-index: 999;
   width: calc(100% - 4rem);
   border-radius: 10px;
+  box-shadow: var(--sombra);
 }
 
 .logo {
   font-size: 1.6rem;
   margin-right: 2rem;
   font-weight: 700;
+}
+
+.logo::before {
+  content: "";
+  background: url("../../assets/logo.png");
+  background-size: 1.3rem;
+  height: 1.3rem;
+  width: 1.3rem;
+  display: inline-block;
+  margin-right: 0.5rem;
 }
 
 .carrinho {
@@ -55,7 +66,7 @@
 .form input {
   background: var(--cor-bg);
   border-radius: 0.2rem;
-  padding: 1rem 3rem 1rem 1rem;
+  padding: 0.9rem 3rem 0.9rem 0.9rem;
   margin-right: 0.5rem;
   flex: 1;
 }
