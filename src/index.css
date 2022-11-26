@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Ribeye+Marrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,14 +7,13 @@
 }
 
 :root {
-  --cor-1: #e7f4ed;
-  --cor-2: #fbb1d0;
-  --cor-3: #fe96c2;
-  --cor-4: #570b2b;
+  --cor-1: #fff;
+  --cor-2: #f4a8c4;
+  --cor-4: #a63e64;
   --cor-5: #7fd878;
   --cor-6: #245320;
-  --cor-7: #f0f6f3;
-  --cor-bg: #f0f6f3;
+  --cor-7: #e9f3f0;
+  --cor-bg: #eef4f2;
   scrollbar-color: #b4b4b4 var(--cor-1);
   scrollbar-width: thin;
 }
@@ -23,10 +22,9 @@ body {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 15px;
-  background-color: var(--cor-bg);
-  color: rgb(49, 49, 49);
+  background: var(--cor-bg);
+  color: #545463;
 }
-
 input {
   border: none;
   outline: none;

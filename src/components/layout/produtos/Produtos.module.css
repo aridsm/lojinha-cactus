@@ -4,6 +4,7 @@
   align-content: start;
   padding-top: 4rem;
   min-height: calc(100vh - 4rem);
+  padding: 6rem 2rem 0 2rem;
 }
 
 @media all and (max-width: 925px) {

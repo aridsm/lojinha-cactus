@@ -1,5 +1,6 @@
 .produtos {
   padding: 3rem 4rem 5rem 4rem;
+  border: 1px solid red;
 }
 
 .produtos h1 {

@@ -3,30 +3,34 @@
   align-items: center;
   background: var(--cor-1);
   padding: 1.2rem 2rem;
-  height: 4rem;
-  border-bottom: 1px solid rgb(219, 219, 219);
+  height: 4.5rem;
   position: fixed;
+  left: 2rem;
+  top: 1rem;
   z-index: 999;
-  width: 100%;
+  width: calc(100% - 4rem);
+  border-radius: 10px;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-right: 2rem;
-  font-family: "Ribeye Marrow", cursive;
+  font-weight: 700;
 }
 
 .carrinho {
   margin-right: 1rem;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
-.carrinho,
-.conta {
+.carrinho {
   display: flex;
   align-items: center;
   padding: 0.7rem;
   transition: 0.1s;
   text-align: right;
+  font-weight: 700;
 }
 
 .carrinho:hover,
@@ -34,8 +38,7 @@
   color: var(--cor-2);
 }
 
-.carrinho svg,
-.conta svg {
+.carrinho svg {
   transform: scale(1.3);
   width: 30px;
   margin-left: 0.5rem;
@@ -46,20 +49,34 @@
   max-width: 22rem;
   width: 100%;
   margin-right: 2rem;
+  position: relative;
 }
 
 .form input {
-  background: var(--cor-7);
+  background: var(--cor-bg);
   border-radius: 0.2rem;
-  padding: 0.5rem;
+  padding: 1rem 3rem 1rem 1rem;
   margin-right: 0.5rem;
   flex: 1;
+}
+
+.form input::placeholder {
+  color: rgba(89, 89, 95, 0.5);
 }
 
 .form label {
   visibility: hidden;
   position: absolute;
   z-index: -1;
+}
+
+.iconSearch {
+  color: rgba(89, 89, 95, 0.5);
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
 }
 
 .quantidade {
@@ -73,8 +90,8 @@
   position: absolute;
   right: -1rem;
   top: -1rem;
-  background: var(--cor-5);
-  color: var(--cor-6);
+  background: var(--cor-2);
+  color: var(--cor-4);
   font-weight: bold;
   font-size: 0.75rem;
   display: grid;
@@ -82,7 +99,6 @@
 }
 
 .menu {
-  display: flex;
   margin-left: auto;
 }
 
@@ -115,8 +131,7 @@
     margin-right: 0;
   }
 
-  .carrinho,
-  .conta {
+  .carrinho {
     justify-content: flex-end;
   }
 
