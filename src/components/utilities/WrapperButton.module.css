@@ -1,10 +1,14 @@
 .button {
-  padding: 0.8rem 1rem;
-  background-color: var(--cor-2);
+  padding: 1rem;
+  background-color: var(--cor-5);
   color: var(--cor-4);
   border: none;
   transition: 0.1s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: var(--sombra);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .button:hover {

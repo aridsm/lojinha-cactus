@@ -54,7 +54,7 @@ const cores = [
 const FormCores = () => {
   const [coresSelecionadas, setCoresSelecionadas] = useState([]);
 
-  //Trocar valor cores
+  //Trocar cores selecionadas
   const handleChange = ({ target }) => {
     if (target.checked) {
       setCoresSelecionadas([...coresSelecionadas, target.value]);

@@ -1,38 +1,42 @@
-import React, { useContext } from 'react'
-import { FilterContext } from '../../context/FilterContext'
-import WrapperFiltroSection from '../utilities/WrapperFiltroSection'
-import classes from './FormCategoria.module.css'
+import React, { useState } from "react";
+import WrapperFiltroSection from "../utilities/WrapperFiltroSection";
+import classes from "./FormCategoria.module.css";
 
-const CheckboxCategoria = ({ nome, lista, setCategorias }) => {
-
-  const handleChange = ({ target }) => {
-    setCategorias(target)
-  }
-
-  return (
-    <label htmlFor={nome}>
-      {nome}
-      <input type='checkbox' name='categoria' id={nome} value={nome} onChange={handleChange} checked={lista.includes(nome)} />
-    </label>
-  )
-}
-
-const categorias = ['flores', 'cactos', 'outros']
+const categorias = ["flores", "cactos", "outros"];
 
 const FormCategoria = () => {
+  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]);
 
-  const { filtro, setCategorias } = useContext(FilterContext)
+  const handleChange = ({ target }) => {
+    if (target.checked) {
+      setCategoriasSelecionadas([...categoriasSelecionadas, target.value]);
+    } else {
+      console.log(target.value);
+      setCategoriasSelecionadas((currValue) => {
+        return currValue.filter((val) => val !== target.value);
+      });
+    }
+  };
 
   return (
-    <WrapperFiltroSection title='Categorias'>
+    <WrapperFiltroSection title="Categorias">
       <form className={classes.form}>
-        {categorias.map(categoria =>
-          <CheckboxCategoria key={categoria} nome={categoria} lista={filtro.categorias} setCategorias={setCategorias} />
-        )}
+        {categorias.map((categoria) => (
+          <label htmlFor={categoria}>
+            {categoria}
+            <input
+              type="checkbox"
+              name="categoria"
+              id={categoria}
+              value={categoria}
+              onChange={handleChange}
+              checked={categoriasSelecionadas.includes(categoria)}
+            />
+          </label>
+        ))}
       </form>
     </WrapperFiltroSection>
+  );
+};
 
-  )
-}
-
-export default FormCategoria
+export default FormCategoria;
