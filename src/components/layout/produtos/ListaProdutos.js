@@ -11,21 +11,21 @@ const ListaProdutos = () => {
   const itensPorPag = 12;
   const [produtos, setProdutos] = useState(todos_produtos);
   const [produtosExibidos, setProdutosExibidos] = useState([]);
-  const { filtro } = useContext(FilterContext);
+  const { filter } = useContext(FilterContext);
 
-  const { categorias, cores, valores } = filtro;
+  const { categories, colors, prices } = filter;
 
   useEffect(() => {
     const filteredProdutos = todos_produtos
-      .filter((produto) => categorias.indexOf(produto.categoria) >= 0)
-      .filter((produto) => cores.indexOf(produto.cor) >= 0)
+      .filter((produto) => categories.indexOf(produto.categoria) >= 0)
+      .filter((produto) => colors.indexOf(produto.cor) >= 0)
       .filter(
         (produto) =>
-          +produto.preco >= valores.min && +produto.preco <= valores.max
+          +produto.preco >= prices?.min && +produto.preco <= prices?.max
       );
     setPagAtual(1);
     setProdutos(filteredProdutos);
-  }, [categorias, cores, valores.min, valores.max]);
+  }, [categories, colors, prices?.min, prices?.max]);
 
   useEffect(() => {
     const indexPagAnterior = itensPorPag * (pagAtual - 1);

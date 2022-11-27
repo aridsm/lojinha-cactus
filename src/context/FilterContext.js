@@ -1,12 +1,15 @@
-import React, { createContext, useCallback, useReducer, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 
 export const FilterContext = createContext();
 
 const FilterContextProvider = ({ children }) => {
-  const [filter, setFilter] = useState({});
+  const [filter, setFilter] = useState({
+    colors: [],
+    prices: {},
+    categories: [],
+  });
 
-  const saveFilter = useCallback(({ newFilter }) => {
-    console.log(newFilter);
+  const saveFilter = useCallback((newFilter) => {
     setFilter(newFilter);
   }, []);
 

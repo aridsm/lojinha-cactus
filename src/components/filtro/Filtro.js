@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useContext, useRef, useState } from "react";
 import { FilterContext } from "../../context/FilterContext";
 import WrapperButton from "../utilities/WrapperButton";
 import ButtonFechar from "../utilities/ButtonFechar";
@@ -37,11 +31,6 @@ const Filtro = () => {
   const setFilterCategories = useCallback((categories) => {
     setFilter((currVal) => ({ ...currVal, categories }));
   }, []);
-
-  useEffect(() => {
-    console.log(filter);
-    saveFilter(filter);
-  }, [filter, saveFilter]);
 
   const btnFiltro = (
     <button
