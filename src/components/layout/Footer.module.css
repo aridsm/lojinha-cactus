@@ -1,11 +1,11 @@
 .footer {
-  background: var(--cor-7);
-  border-top: 1px solid rgb(228, 228, 228);
+  background: var(--cor-1);
+  box-shadow: var(--sombra);
   padding: 1.2rem 1rem;
   height: 4rem;
   position: relative;
   z-index: 2;
-
+  margin-top: 3rem;
 }
 
 .footer p {
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: .2rem;
+  margin-left: 0.2rem;
 }
 
 .footer a:hover {
@@ -26,5 +26,5 @@
 }
 
 .footer a svg {
-  margin-left: .2rem;
+  margin-left: 0.2rem;
 }

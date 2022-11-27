@@ -5,10 +5,10 @@
   padding: 1.2rem 2rem;
   height: 4.5rem;
   position: fixed;
-  left: 2rem;
+  left: 1rem;
   top: 1rem;
   z-index: 999;
-  width: calc(100% - 4rem);
+  width: calc(100% - 2rem);
   border-radius: 10px;
   box-shadow: var(--sombra);
 }
