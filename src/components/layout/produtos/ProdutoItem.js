@@ -1,16 +1,16 @@
 import React, { useContext, useRef, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
-import WrapperButton from "../../utilities/WrapperButton";
 import classes from "./ProdutoItem.module.css";
 
-const ProdutoItem = ({ nome, img, preco }) => {
+const ProdutoItem = ({ nome, img, preco, description }) => {
   const [quantidade, setQuantidade] = useState(1);
-  const [isAlertShown, setIsAlertShown] = useState(false);
   const animaTimeout = useRef();
 
   const { addItem } = useContext(CartContext);
 
-  const addItemToCartHandler = () => {
+  const addItemToCartHandler = (e) => {
+    e.preventDefault();
+
     clearTimeout(animaTimeout.current);
 
     addItem({
@@ -19,47 +19,44 @@ const ProdutoItem = ({ nome, img, preco }) => {
       quantidade: +quantidade,
       img: img,
     });
-
-    setIsAlertShown(true);
-    const animationDuration = 1000;
-
-    animaTimeout.current = setTimeout(() => {
-      setIsAlertShown(false);
-    }, animationDuration);
   };
 
   return (
     <li className={classes.card}>
-      <div>
+      <div className={classes.imgContainer}>
         <img src={require(`../../../assets/imgs-produtos/${img}`)} alt={nome} />
       </div>
       <div className={classes.infos}>
         <div className={classes.precoENome}>
-          <p className={classes.nome}>{nome}</p>
-          <p>
-            <span className={classes.reais}>R$</span>
-            <span className={classes.preco}>{preco}</span>
+          <p className={classes.name}>{nome}</p>
+          <p className={classes.description} title={description}>
+            {description}
           </p>
         </div>
-        <form className={classes.quantidadeForm}>
-          <label>
-            qt.
-            <input
-              type="number"
-              name="quantidade"
-              id="quantidade"
-              value={quantidade}
-              onChange={(e) => setQuantidade(e.target.value)}
-              step="1"
-              min="1"
-            />
-          </label>
-        </form>
-        <div className={classes.btnAlert}>
-          {isAlertShown && <span className={classes.alertAdd}>+</span>}
-          <WrapperButton className={classes.btn} onClick={addItemToCartHandler}>
-            Adicionar ao carrinho
-          </WrapperButton>
+
+        <div className={classes.flex}>
+          <p className={classes.preco}>R$ {preco}</p>
+          <form className={classes.quantidadeForm}>
+            <label>
+              <span>quantidade</span>
+              <input
+                type="number"
+                name="quantidade"
+                id="quantidade"
+                value={quantidade}
+                onChange={(e) => setQuantidade(e.target.value)}
+                step="1"
+                min="1"
+              />
+            </label>
+            <button
+              className={classes.btnAdd}
+              onClick={addItemToCartHandler}
+              title="adicionar ao carrinho"
+            >
+              +
+            </button>
+          </form>
         </div>
       </div>
     </li>

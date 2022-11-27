@@ -25,6 +25,7 @@ const ListaProdutos = () => {
       nome={produto.nome}
       preco={produto.preco}
       img={produto.img}
+      description={produto.description}
     />
   ));
 
