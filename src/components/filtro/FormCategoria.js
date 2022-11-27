@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import WrapperFiltroSection from "../utilities/WrapperFiltroSection";
 import classes from "./FormCategoria.module.css";
 
 const categorias = ["flores", "cactos", "outros"];
 
-const FormCategoria = () => {
+const FormCategoria = ({ setFilter }) => {
   const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]);
 
   const handleChange = ({ target }) => {
     if (target.checked) {
       setCategoriasSelecionadas([...categoriasSelecionadas, target.value]);
     } else {
-      console.log(target.value);
       setCategoriasSelecionadas((currValue) => {
         return currValue.filter((val) => val !== target.value);
       });
     }
   };
 
+  useEffect(() => {
+    setFilter(categoriasSelecionadas);
+  }, [categoriasSelecionadas, setFilter]);
+
   return (
     <WrapperFiltroSection title="Categorias">
       <form className={classes.form}>
         {categorias.map((categoria) => (
-          <label htmlFor={categoria}>
+          <label htmlFor={categoria} key={categoria}>
             {categoria}
             <input
               type="checkbox"

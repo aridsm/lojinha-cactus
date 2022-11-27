@@ -11,7 +11,6 @@ const ProdutosPagination = ({
 }) => {
   const paginas = [];
   const totalPaginas = Math.ceil(produtos.length / itensPorPag);
-  console.log(paginas, pagAtual);
   for (let i = 1; i <= totalPaginas; i++) {
     paginas.push(i);
   }

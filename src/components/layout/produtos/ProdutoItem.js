@@ -25,7 +25,6 @@ const ProdutoItem = ({ nome, img, preco }) => {
 
     animaTimeout.current = setTimeout(() => {
       setIsAlertShown(false);
-      console.log("1");
     }, animationDuration);
   };
 

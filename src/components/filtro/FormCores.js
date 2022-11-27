@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import WrapperFiltroSection from "../utilities/WrapperFiltroSection";
 import { ReactComponent as IconCheck } from "../../assets/check.svg";
 import classes from "./FormCores.module.css";
@@ -51,20 +51,23 @@ const cores = [
   },
 ];
 
-const FormCores = () => {
-  const [coresSelecionadas, setCoresSelecionadas] = useState([]);
+const FormCores = ({ setFilter }) => {
+  const [selectedColors, setSelectedColors] = useState([]);
 
   //Trocar cores selecionadas
   const handleChange = ({ target }) => {
     if (target.checked) {
-      setCoresSelecionadas([...coresSelecionadas, target.value]);
+      setSelectedColors([...selectedColors, target.value]);
     } else {
-      console.log(target.value);
-      setCoresSelecionadas((currValue) => {
+      setSelectedColors((currValue) => {
         return currValue.filter((val) => val !== target.value);
       });
     }
   };
+
+  useEffect(() => {
+    setFilter(selectedColors);
+  }, [setFilter, selectedColors]);
 
   return (
     <WrapperFiltroSection title="Cores">
@@ -84,9 +87,9 @@ const FormCores = () => {
               id={item.cor}
               value={item.cor}
               onChange={handleChange}
-              checked={coresSelecionadas.includes(item.cor)}
+              checked={selectedColors.includes(item.cor)}
             />
-            {coresSelecionadas.includes(item.cor) && (
+            {selectedColors.includes(item.cor) && (
               <span className={classes.checked}>
                 <IconCheck />
               </span>
