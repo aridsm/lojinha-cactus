@@ -12,13 +12,9 @@ import { ReactComponent as IconFiltro } from "../../assets/funnel.svg";
 const Filtro = () => {
   const refBtnFiltro = useRef();
   const { menuVisible, setMenuVisible } = useVisibility(refBtnFiltro);
-  const { saveFilter } = useContext(FilterContext);
+  const { saveFilter, initialFilter } = useContext(FilterContext);
 
-  const [filter, setFilter] = useState({
-    colors: [],
-    prices: {},
-    categories: [],
-  });
+  const [filter, setFilter] = useState(initialFilter);
 
   const setFilterPrices = useCallback((prices) => {
     setFilter((currVal) => ({ ...currVal, prices }));
@@ -49,6 +45,10 @@ const Filtro = () => {
     saveFilter(filter);
   };
 
+  const cleanFilter = () => {
+    saveFilter(initialFilter);
+  };
+
   return (
     <>
       <div ref={refBtnFiltro} className={classes.filtroContainer}>
@@ -71,7 +71,7 @@ const Filtro = () => {
             <WrapperButton className={classes.btn} onClick={applyFilter}>
               Aplicar filtro
             </WrapperButton>
-            <button>Limpar filtro</button>
+            <button onClick={cleanFilter}>Limpar filtro</button>
           </section>
         )}
       </div>

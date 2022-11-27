@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FilterContext } from "../../../context/FilterContext";
-import { todos_produtos } from "../../../lista_produtos";
 import HeaderProdutos from "./HeaderProdutos";
 import classes from "./ListaProdutos.module.css";
 import ProdutoItem from "./ProdutoItem";
@@ -9,29 +8,16 @@ import ProdutosPagination from "./ProdutosPagination";
 const ListaProdutos = () => {
   const [pagAtual, setPagAtual] = useState(1);
   const itensPorPag = 12;
-  const [produtos, setProdutos] = useState(todos_produtos);
   const [produtosExibidos, setProdutosExibidos] = useState([]);
-  const { filter } = useContext(FilterContext);
-
-  const { categories, colors, prices } = filter;
-
-  useEffect(() => {
-    const filteredProdutos = todos_produtos
-      .filter((produto) => categories.indexOf(produto.categoria) >= 0)
-      .filter((produto) => colors.indexOf(produto.cor) >= 0)
-      .filter(
-        (produto) =>
-          +produto.preco >= prices?.min && +produto.preco <= prices?.max
-      );
-    setPagAtual(1);
-    setProdutos(filteredProdutos);
-  }, [categories, colors, prices?.min, prices?.max]);
+  const { filteredProducts } = useContext(FilterContext);
 
   useEffect(() => {
     const indexPagAnterior = itensPorPag * (pagAtual - 1);
     const indexPagAtual = itensPorPag * pagAtual;
-    setProdutosExibidos(produtos.slice(indexPagAnterior, indexPagAtual));
-  }, [pagAtual, produtos]);
+    setProdutosExibidos(
+      filteredProducts.slice(indexPagAnterior, indexPagAtual)
+    );
+  }, [pagAtual, filteredProducts]);
 
   const listaProdutos = produtosExibidos.map((produto) => (
     <ProdutoItem
@@ -45,16 +31,16 @@ const ListaProdutos = () => {
   return (
     <section className={classes.produtos}>
       <HeaderProdutos
-        produtos={produtos}
+        produtos={filteredProducts}
         itensPorPag={itensPorPag}
         pagAtual={pagAtual}
         setPagAtual={setPagAtual}
       />
-      {produtos.length ? (
+      {filteredProducts.length ? (
         <>
           <ul>{listaProdutos}</ul>
           <ProdutosPagination
-            produtos={produtos}
+            produtos={filteredProducts}
             itensPorPag={itensPorPag}
             setPagAtual={setPagAtual}
             pagAtual={pagAtual}

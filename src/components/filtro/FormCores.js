@@ -78,6 +78,7 @@ const FormCores = ({ setFilter }) => {
               htmlFor={item.cor}
               style={{ backgroundColor: item.bg, color: item.color }}
               className={classes.btnCor}
+              title={item.cor}
             >
               <span>{item.cor}</span>
             </label>
