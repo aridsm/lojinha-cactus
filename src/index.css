@@ -11,7 +11,7 @@
   --cor-2: #f4a8c4;
   --cor-4: #b3376d;
   --cor-5: #f3dce4;
-  --cor-6: #245320;
+  --cor-6: #545463;
   --cor-7: #eef4f2;
   --cor-bg: #eef4f2;
   --sombra: 0px 4px 30px hsla(180, 1%, 14%, 0.05);
@@ -24,7 +24,7 @@ body {
   font-weight: 500;
   font-size: 15px;
   background: var(--cor-bg);
-  color: #545463;
+  color: var(--cor-6);
 }
 input {
   border: none;

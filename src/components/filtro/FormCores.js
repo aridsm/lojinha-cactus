@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import WrapperFiltroSection from "../utilities/WrapperFiltroSection";
-import { ReactComponent as IconCheck } from "../../assets/check.svg";
 import classes from "./FormCores.module.css";
 
 const cores = [
@@ -73,7 +72,12 @@ const FormCores = ({ setFilter }) => {
     <WrapperFiltroSection title="Cores">
       <form className={classes.listaCores}>
         {cores.map((item) => (
-          <div className={classes.corItem} key={item.cor}>
+          <div
+            className={`${classes.corItem} ${
+              selectedColors.includes(item.cor) ? classes.checked : ""
+            }`}
+            key={item.cor}
+          >
             <label
               htmlFor={item.cor}
               style={{ backgroundColor: item.bg, color: item.color }}
@@ -90,11 +94,6 @@ const FormCores = ({ setFilter }) => {
               onChange={handleChange}
               checked={selectedColors.includes(item.cor)}
             />
-            {selectedColors.includes(item.cor) && (
-              <span className={classes.checked}>
-                <IconCheck />
-              </span>
-            )}
           </div>
         ))}
       </form>

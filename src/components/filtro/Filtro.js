@@ -71,7 +71,9 @@ const Filtro = () => {
             <WrapperButton className={classes.btn} onClick={applyFilter}>
               Aplicar filtro
             </WrapperButton>
-            <button onClick={cleanFilter}>Limpar filtro</button>
+            <button onClick={cleanFilter} className={classes.btnLimpar}>
+              Limpar filtro
+            </button>
           </section>
         )}
       </div>

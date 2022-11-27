@@ -1,8 +1,8 @@
 .btnCor {
   border-radius: 0.2rem;
   text-transform: capitalize;
-  min-width: 1.5rem;
-  min-height: 1.5rem;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .btnCor span {
@@ -30,28 +30,15 @@
 }
 
 .corItem label:hover {
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
   transform: scale(1.05);
+}
+
+.checked label {
+  box-shadow: 0 0 0 2px var(--cor-1), 0 0 0 3px var(--cor-6);
 }
 
 .corItem input {
   position: absolute;
   z-index: -99;
   visibility: hidden;
-}
-
-.checked {
-  color: var(--cor-6);
-  background: var(--cor-5);
-  border: 1px solid var(--cor-6);
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
-  position: absolute;
-  z-index: 2;
-  top: -0.4rem;
-  right: -0.4rem;
 }
