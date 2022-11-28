@@ -10,7 +10,7 @@
   --cor-1: #f0f6f4;
   --cor-2: #e18fad;
   --cor-4: #c85285;
-  --cor-5: #f3dce4;
+  --cor-5: #edd0da;
   --cor-6: #545463;
   --cor-7: #e2ede7;
   --cor-bg: #e9efed;
@@ -21,13 +21,12 @@
 }
 
 .darkMode {
-  --cor-1: #212624;
+  --cor-1: #292f31;
   --cor-4: #9e2b5d;
   --cor-5: #da96ae;
   --cor-6: #a5aba7;
-  --cor-7: #2c312f;
-  --cor-bg: #1a1f1e;
-  --sombra: 0px 4px 30px #0f10100d;
+  --cor-7: #2f3639;
+  --cor-bg: #212628;
   --border: 2px solid var(--cor-7);
 }
 .app {

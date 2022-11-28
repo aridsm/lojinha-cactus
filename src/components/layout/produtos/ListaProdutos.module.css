@@ -42,6 +42,7 @@
 @media all and (max-width: 925px) {
   .produtos {
     grid-column: 1;
+    grid-row: 2;
   }
 
   .productsList {

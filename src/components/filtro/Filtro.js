@@ -30,7 +30,7 @@ const Filtro = () => {
 
   const btnFiltro = (
     <button
-      className={`${classes.btnAbrirFiltro} ${
+      className={`${classes.btnOpenFilter} ${
         menuVisible ? classes.filtroVisible : ""
       }`}
       aria-label="Abrir filtro"

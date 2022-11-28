@@ -28,7 +28,7 @@
   display: block;
 }
 
-.btnAbrirFiltro {
+.btnOpenFilter {
   display: none;
 }
 
@@ -38,39 +38,37 @@
 
 @media all and (max-width: 925px) {
   .filtro {
-    border-bottom: 1px solid rgb(228, 228, 228);
-    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 4rem;
-    overflow: auto;
-    z-index: 99;
+    top: 0;
+    left: 0;
+    z-index: 999;
     padding: 2rem 3rem;
-    min-height: auto;
-    max-height: calc(100vh - 4rem);
+    height: 100vh;
   }
-
-  .btnAbrirFiltro {
+  .filtroContainer {
+    grid-row: 1;
+    position: relative;
+  }
+  .btnOpenFilter {
     display: block;
-    position: absolute;
-    right: 1rem;
-    top: 6rem;
     display: grid;
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.2rem;
     transition: 0.1s;
+    margin-left: auto;
   }
 
-  .btnAbrirFiltro:hover {
+  .btnOpenFilter:hover {
     background: var(--cor-7);
   }
 
-  .btnAbrirFiltro.filtroVisible {
+  .btnOpenFilter.filtroVisible {
     border: 1px solid var(--cor-2);
   }
 
-  .btnAbrirFiltro svg {
+  .btnOpenFilter svg {
     transform: scale(1.3);
   }
 
