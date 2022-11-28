@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import classes from "./Header.module.css";
 import { ReactComponent as IconCart } from "../../assets/cart.svg";
 import { ReactComponent as IconMenu } from "../../assets/menu.svg";
@@ -14,10 +14,27 @@ const Header = ({ onShow }) => {
   const { changeMode, isDarkMode } = useContext(ColorModeContext);
   const refBtnMenu = useRef();
   const { menuVisible, setMenuVisible } = useVisibility(refBtnMenu);
+  const [pageScrolled, setPageScrolled] = useState(false);
 
   const totalItensNoCarrinho = itensCart.itens.reduce((prev, curr) => {
     return prev + curr.quantidade;
   }, 0);
+
+  useEffect(() => {
+    const scrollPage = () => {
+      if (window.scrollY > 16) {
+        setPageScrolled(true);
+      } else {
+        setPageScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollPage);
+
+    return () => {
+      window.removeEventListener("scroll", scrollPage);
+    };
+  }, []);
 
   const btnMenu = (
     <button
@@ -32,7 +49,9 @@ const Header = ({ onShow }) => {
   );
 
   return (
-    <header className={classes.header}>
+    <header
+      className={`${classes.header} ${pageScrolled ? classes.scroll : ""}`}
+    >
       <span className={classes.logo}>Cactus</span>
       <form className={classes.form}>
         <label htmlFor="search">Pesquise aqui</label>

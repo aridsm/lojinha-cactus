@@ -60,12 +60,12 @@
   margin-left: 0.5rem;
   font-size: 18px;
   font-weight: 700;
-  color: var(--cor-2);
+  color: var(--cor-4);
   transition: 0.1s;
 }
 
 .btnAdd:hover {
-  background: #d5e6dc;
+  background: var(--cor-2);
 }
 .btnAdd:active {
   transform: scale(0.9);

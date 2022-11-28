@@ -4,11 +4,33 @@
 }
 
 .form label {
-  display: flex;
   text-transform: capitalize;
+  cursor: pointer;
+}
+.divInput + .divInput {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
-.form label input {
-  order: -1;
-  margin-right: .3rem;
+.divInput {
+  display: flex;
+  align-items: center;
+}
+
+.form input {
+  position: absolute;
+  visibility: hidden;
+}
+.form label::before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  box-shadow: 0 0 0 2px var(--cor-1), 0 0 0 3px #cfcfd1;
+  margin-right: 0.7rem;
+}
+.form input:checked ~ label::before {
+  background: var(--cor-2);
 }

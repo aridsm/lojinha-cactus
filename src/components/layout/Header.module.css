@@ -5,14 +5,20 @@
   padding: 1.2rem 2rem;
   height: 4.5rem;
   position: fixed;
-  left: 1rem;
+  left: 2rem;
   top: 1rem;
   z-index: 999;
-  width: calc(100% - 2rem);
+  width: calc(100% - 4rem);
   border-radius: 10px;
   box-shadow: var(--sombra);
+  transition: 0.2s;
 }
-
+.scroll {
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0;
+}
 .logo {
   font-size: 1.6rem;
   margin-right: 2rem;
@@ -101,7 +107,7 @@
   position: absolute;
   right: -1rem;
   top: -1rem;
-  background: var(--cor-2);
+  background: var(--cor-5);
   color: var(--cor-4);
   font-weight: bold;
   font-size: 0.75rem;

@@ -25,8 +25,7 @@ const FormCategoria = ({ setFilter }) => {
     <WrapperFiltroSection title="Categorias">
       <form className={classes.form}>
         {categorias.map((categoria) => (
-          <label htmlFor={categoria} key={categoria}>
-            {categoria}
+          <div className={classes.divInput}>
             <input
               type="checkbox"
               name="categoria"
@@ -35,7 +34,10 @@ const FormCategoria = ({ setFilter }) => {
               onChange={handleChange}
               checked={categoriasSelecionadas.includes(categoria)}
             />
-          </label>
+            <label htmlFor={categoria} key={categoria}>
+              {categoria}
+            </label>
+          </div>
         ))}
       </form>
     </WrapperFiltroSection>
