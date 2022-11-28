@@ -10,6 +10,8 @@
 .navCatalogo {
   grid-column: 1;
   grid-row: 1;
+  height: 2rem;
+  line-height: 2rem;
 }
 
 @media all and (max-width: 925px) {

@@ -3,11 +3,15 @@ import classes from "./Header.module.css";
 import { ReactComponent as IconCart } from "../../assets/cart.svg";
 import { ReactComponent as IconMenu } from "../../assets/menu.svg";
 import { ReactComponent as IconSearch } from "../../assets/search.svg";
+import { ReactComponent as IconSun } from "../../assets/sun.svg";
+import { ReactComponent as IconMoon } from "../../assets/moon.svg";
 import { CartContext } from "../../context/CartContext";
 import useVisibility from "../../customHook/useVisibility";
+import { ColorModeContext } from "../../context/ColorModeContext";
 
 const Header = ({ onShow }) => {
   const { itensCart } = useContext(CartContext);
+  const { changeMode, isDarkMode } = useContext(ColorModeContext);
   const refBtnMenu = useRef();
   const { menuVisible, setMenuVisible } = useVisibility(refBtnMenu);
 
@@ -52,6 +56,9 @@ const Header = ({ onShow }) => {
           </button>
         </div>
       )}
+      <button className={classes.btnColorMode} onClick={changeMode}>
+        {isDarkMode ? <IconSun /> : <IconMoon />}
+      </button>
     </header>
   );
 };

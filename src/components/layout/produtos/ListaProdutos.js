@@ -19,6 +19,10 @@ const ListaProdutos = () => {
     );
   }, [pagAtual, filteredProducts]);
 
+  useEffect(() => {
+    setPagAtual(1);
+  }, [filteredProducts]);
+
   const listaProdutos = produtosExibidos.map((produto) => (
     <ProdutoItem
       key={produto.nome}

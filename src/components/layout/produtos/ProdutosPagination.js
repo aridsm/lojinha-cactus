@@ -32,25 +32,29 @@ const ProdutosPagination = ({
   };
 
   return (
-    <nav className={classes.nav}>
-      <button onClick={() => handleClickPage(+pagAtual - 1)}>
-        <ArrowLeft />
-      </button>
-      {paginas.map((pag) => (
-        <button
-          key={pag}
-          onClick={handleClickNumber}
-          className={`${classes.pagNumber} ${
-            +pag === +pagAtual ? classes.pagAtual : ""
-          }`}
-        >
-          {pag}
-        </button>
-      ))}
-      <button onClick={() => handleClickPage(+pagAtual + 1)}>
-        <ArrowRight />
-      </button>
-    </nav>
+    <>
+      {paginas.length > 1 && (
+        <nav className={classes.nav}>
+          <button onClick={() => handleClickPage(+pagAtual - 1)}>
+            <ArrowLeft />
+          </button>
+          {paginas.map((pag) => (
+            <button
+              key={pag}
+              onClick={handleClickNumber}
+              className={`${classes.pagNumber} ${
+                +pag === +pagAtual ? classes.pagAtual : ""
+              }`}
+            >
+              {pag}
+            </button>
+          ))}
+          <button onClick={() => handleClickPage(+pagAtual + 1)}>
+            <ArrowRight />
+          </button>
+        </nav>
+      )}
+    </>
   );
 };
 

@@ -44,7 +44,7 @@
   padding: 0.2rem;
   margin-left: 0.2rem;
   border-radius: 8px;
-  border: 2px solid #e4f2ea;
+  border: var(--border);
 }
 
 .quantidadeForm label > span {
@@ -56,11 +56,11 @@
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  background: #e4f2ea;
+  background: var(--cor-5);
   margin-left: 0.5rem;
   font-size: 18px;
   font-weight: 700;
-  color: #a6b7ad;
+  color: var(--cor-2);
   transition: 0.1s;
 }
 

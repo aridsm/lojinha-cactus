@@ -117,6 +117,17 @@
   display: none;
 }
 
+.btnColorMode {
+  background: var(--cor-7);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--cor-6);
+}
+
 @media all and (max-width: 925px) {
   .header {
     padding: 0 1rem;
