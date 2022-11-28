@@ -9,7 +9,7 @@
 :root {
   --cor-1: #f0f6f4;
   --cor-2: #e18fad;
-  --cor-4: #b3376d;
+  --cor-4: #c85285;
   --cor-5: #f3dce4;
   --cor-6: #545463;
   --cor-7: #e2ede7;
@@ -21,12 +21,12 @@
 }
 
 .darkMode {
-  --cor-1: #262b29;
-  --cor-4: #a1275c;
-  --cor-5: #e9b2c5;
+  --cor-1: #212624;
+  --cor-4: #9e2b5d;
+  --cor-5: #da96ae;
   --cor-6: #a5aba7;
   --cor-7: #2c312f;
-  --cor-bg: #202423;
+  --cor-bg: #1a1f1e;
   --sombra: 0px 4px 30px #0f10100d;
   --border: 2px solid var(--cor-7);
 }

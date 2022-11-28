@@ -35,7 +35,10 @@ const ProdutosPagination = ({
     <>
       {paginas.length > 1 && (
         <nav className={classes.nav}>
-          <button onClick={() => handleClickPage(+pagAtual - 1)}>
+          <button
+            onClick={() => handleClickPage(+pagAtual - 1)}
+            title="página anterior"
+          >
             <ArrowLeft />
           </button>
           {paginas.map((pag) => (
@@ -49,7 +52,10 @@ const ProdutosPagination = ({
               {pag}
             </button>
           ))}
-          <button onClick={() => handleClickPage(+pagAtual + 1)}>
+          <button
+            onClick={() => handleClickPage(+pagAtual + 1)}
+            title="próxima página"
+          >
             <ArrowRight />
           </button>
         </nav>

@@ -9,7 +9,7 @@ const ListaProdutos = () => {
   const [pagAtual, setPagAtual] = useState(1);
   const itensPorPag = 12;
   const [produtosExibidos, setProdutosExibidos] = useState([]);
-  const { filteredProducts } = useContext(FilterContext);
+  const { filteredProducts, filter } = useContext(FilterContext);
 
   useEffect(() => {
     const indexPagAnterior = itensPorPag * (pagAtual - 1);
@@ -43,7 +43,17 @@ const ListaProdutos = () => {
       />
       {filteredProducts.length ? (
         <>
-          <ul>{listaProdutos}</ul>
+          {(filter.colors.length !== 0 || filter.categories.length !== 0) && (
+            <ul className={classes.filterList}>
+              {filter.colors.map((color) => (
+                <li key={color}>{color}</li>
+              ))}
+              {filter.categories.map((category) => (
+                <li key={category}>{category}</li>
+              ))}
+            </ul>
+          )}
+          <ul className={classes.productsList}>{listaProdutos}</ul>
           <ProdutosPagination
             produtos={filteredProducts}
             itensPorPag={itensPorPag}

@@ -56,6 +56,7 @@ const FilterContextProvider = ({ children }) => {
         saveFilter,
         filteredProducts,
         initialFilter,
+        filter,
       }}
     >
       {children}
