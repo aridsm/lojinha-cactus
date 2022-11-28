@@ -6,14 +6,12 @@ import { ReactComponent as IconSearch } from "../../assets/search.svg";
 import { ReactComponent as IconSun } from "../../assets/sun.svg";
 import { ReactComponent as IconMoon } from "../../assets/moon.svg";
 import { CartContext } from "../../context/CartContext";
-import useVisibility from "../../customHook/useVisibility";
 import { ColorModeContext } from "../../context/ColorModeContext";
 
 const Header = ({ onShow }) => {
   const { itensCart } = useContext(CartContext);
   const { changeMode, isDarkMode } = useContext(ColorModeContext);
   const refBtnMenu = useRef();
-  const { menuVisible, setMenuVisible } = useVisibility(refBtnMenu);
   const [pageScrolled, setPageScrolled] = useState(false);
 
   const totalItensNoCarrinho = itensCart.itens.reduce((prev, curr) => {
@@ -36,18 +34,6 @@ const Header = ({ onShow }) => {
     };
   }, []);
 
-  const btnMenu = (
-    <button
-      className={`${classes.btnMenu} ${menuVisible ? classes.menuVisible : ""}`}
-      onClick={() => setMenuVisible(true)}
-      ref={refBtnMenu}
-      aria-label="abrir menu"
-      type="button"
-    >
-      <IconMenu />
-    </button>
-  );
-
   return (
     <header
       className={`${classes.header} ${pageScrolled ? classes.scroll : ""}`}
@@ -63,18 +49,14 @@ const Header = ({ onShow }) => {
         />
         <IconSearch className={classes.iconSearch} />
       </form>
-      {btnMenu}
-      {menuVisible && (
-        <div className={classes.menu}>
-          <button className={classes.carrinho} onClick={onShow}>
-            Seu carrinho
-            <span className={classes.quantidade}>
-              <IconCart />
-              <span className={classes.valor}>{totalItensNoCarrinho}</span>
-            </span>
-          </button>
-        </div>
-      )}
+
+      <button className={classes.carrinho} onClick={onShow}>
+        <span className={classes.cartTxt}>Seu carrinho</span>
+        <span className={classes.quantidade}>
+          <IconCart />
+          <span className={classes.valor}>{totalItensNoCarrinho}</span>
+        </span>
+      </button>
       <button className={classes.btnColorMode} onClick={changeMode}>
         {isDarkMode ? <IconSun /> : <IconMoon />}
       </button>
