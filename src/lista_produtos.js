@@ -1,4 +1,4 @@
-export const todos_produtos = [
+export const all_products = [
   {
     nome: "Praesent auctor",
     preco: "42.49",

@@ -36,7 +36,25 @@
 }
 
 .erro {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+.searchName {
+  margin-top: 2rem;
+  color: var(--cor-4);
+  display: flex;
+  align-items: center;
+}
+
+.searchName button {
+  display: grid;
+  place-items: center;
+  margin-left: 0.2rem;
+}
+
+.searchName button svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 @media all and (max-width: 925px) {

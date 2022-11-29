@@ -47,6 +47,7 @@ const Filtro = () => {
 
   const cleanFilter = () => {
     saveFilter(initialFilter);
+    setFilter(initialFilter);
   };
 
   return (

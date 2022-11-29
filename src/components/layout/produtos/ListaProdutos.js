@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FilterContext } from "../../../context/FilterContext";
+import { ReactComponent as IconX } from "../../../assets/x.svg";
 import HeaderProdutos from "./HeaderProdutos";
 import classes from "./ListaProdutos.module.css";
 import ProdutoItem from "./ProdutoItem";
@@ -8,22 +9,21 @@ import ProdutosPagination from "./ProdutosPagination";
 const ListaProdutos = () => {
   const [pagAtual, setPagAtual] = useState(1);
   const itensPorPag = 12;
-  const [produtosExibidos, setProdutosExibidos] = useState([]);
-  const { filteredProducts, filter } = useContext(FilterContext);
+  const [shownProducts, setShownProducts] = useState([]);
+  const { filteredProducts, filter, deleteInputSearchVal } =
+    useContext(FilterContext);
 
   useEffect(() => {
     const indexPagAnterior = itensPorPag * (pagAtual - 1);
     const indexPagAtual = itensPorPag * pagAtual;
-    setProdutosExibidos(
-      filteredProducts.slice(indexPagAnterior, indexPagAtual)
-    );
+    setShownProducts(filteredProducts.slice(indexPagAnterior, indexPagAtual));
   }, [pagAtual, filteredProducts]);
 
   useEffect(() => {
     setPagAtual(1);
   }, [filteredProducts]);
 
-  const listaProdutos = produtosExibidos.map((produto) => (
+  const listaProdutos = shownProducts.map((produto) => (
     <ProdutoItem
       key={produto.nome}
       nome={produto.nome}
@@ -41,18 +41,26 @@ const ListaProdutos = () => {
         pagAtual={pagAtual}
         setPagAtual={setPagAtual}
       />
+      {filter.name && (
+        <p className={classes.searchName}>
+          <button onClick={deleteInputSearchVal} title="excluir pesquisa">
+            <IconX />
+          </button>{" "}
+          Resultados para "{filter.name}"
+        </p>
+      )}
+      {(filter.colors.length !== 0 || filter.categories.length !== 0) && (
+        <ul className={classes.filterList}>
+          {filter.colors.map((color) => (
+            <li key={color}>{color}</li>
+          ))}
+          {filter.categories.map((category) => (
+            <li key={category}>{category}</li>
+          ))}
+        </ul>
+      )}
       {filteredProducts.length ? (
         <>
-          {(filter.colors.length !== 0 || filter.categories.length !== 0) && (
-            <ul className={classes.filterList}>
-              {filter.colors.map((color) => (
-                <li key={color}>{color}</li>
-              ))}
-              {filter.categories.map((category) => (
-                <li key={category}>{category}</li>
-              ))}
-            </ul>
-          )}
           <ul className={classes.productsList}>{listaProdutos}</ul>
           <ProdutosPagination
             produtos={filteredProducts}

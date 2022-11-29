@@ -2,17 +2,16 @@ import React, { useContext } from "react";
 import classes from "./SearchField.module.css";
 import { ReactComponent as IconSearch } from "../../assets/search.svg";
 import WrapperButton from "../utilities/WrapperButton";
-import { SearchContext } from "../../context/SearchContext";
+import { FilterContext } from "../../context/FilterContext";
 
 const SearchField = () => {
-  const { searchForAName } = useContext(SearchContext);
-
+  const { saveInputSearchVal } = useContext(FilterContext);
   const searchHandler = (e) => {
     e.preventDefault();
 
-    const inputValue = e.target.search.value.toLowerCase();
+    const inputValue = e.target.search.value.toLowerCase().trim();
 
-    searchForAName(inputValue);
+    saveInputSearchVal(inputValue);
   };
 
   return (

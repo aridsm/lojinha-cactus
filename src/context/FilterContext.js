@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { todos_produtos } from "../lista_produtos";
+import { all_products } from "../lista_produtos";
 
 export const FilterContext = createContext();
 
@@ -7,15 +7,24 @@ const initialFilter = {
   colors: [],
   prices: { min: 0, max: 1000 },
   categories: [],
+  name: "",
 };
 
 const FilterContextProvider = ({ children }) => {
   const [filter, setFilter] = useState(initialFilter);
 
-  const [filteredProducts, setFilteredProducts] = useState(todos_produtos);
+  const [filteredProducts, setFilteredProducts] = useState(all_products);
 
   const saveFilter = (newFilter) => {
-    setFilter(newFilter);
+    setFilter((currVal) => ({ ...newFilter, name: currVal.name }));
+  };
+
+  const saveInputSearchVal = (name) => {
+    setFilter((currVal) => ({ ...currVal, name }));
+  };
+
+  const deleteInputSearchVal = () => {
+    setFilter((currVal) => ({ ...currVal, name: "" }));
   };
 
   //Filtragem
@@ -23,7 +32,7 @@ const FilterContextProvider = ({ children }) => {
     let newFilter = {};
 
     //Filtrar por cor
-    newFilter = todos_produtos.filter((prod) => {
+    newFilter = all_products.filter((prod) => {
       if (filter.colors.length === 0) return true;
       return filter.colors.indexOf(prod.cor) >= 0;
     });
@@ -32,6 +41,11 @@ const FilterContextProvider = ({ children }) => {
     newFilter = newFilter.filter((prod) => {
       if (filter.categories.length === 0) return true;
       return filter.categories.indexOf(prod.categoria) >= 0;
+    });
+
+    //Filtrar por nome
+    newFilter = newFilter.filter((prod) => {
+      return prod.nome.toLowerCase().startsWith(filter.name);
     });
 
     //Filtrar por preço
@@ -54,6 +68,8 @@ const FilterContextProvider = ({ children }) => {
     <FilterContext.Provider
       value={{
         saveFilter,
+        saveInputSearchVal,
+        deleteInputSearchVal,
         filteredProducts,
         initialFilter,
         filter,

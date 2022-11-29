@@ -32,5 +32,5 @@
   margin-right: 0.7rem;
 }
 .form input:checked ~ label::before {
-  background: var(--cor-2);
+  background: var(--cor-5);
 }
