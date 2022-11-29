@@ -8,8 +8,9 @@
 
 :root {
   --cor-1: #f0f6f4;
-  --cor-2: #e18fad;
-  --cor-4: #c85285;
+  --cor-2: #d97c9c;
+  --cor-3: #a4b0ac;
+  --cor-4: #d58ca6;
   --cor-5: #edd0da;
   --cor-6: #545463;
   --cor-7: #e2ede7;
@@ -23,7 +24,8 @@
 .darkMode {
   --cor-1: #292f31;
   --cor-4: #9e2b5d;
-  --cor-5: #da96ae;
+  --cor-3: rgb(72, 81, 85);
+  --cor-5: #d58ca6;
   --cor-6: #a5aba7;
   --cor-7: #2f3639;
   --cor-bg: #212628;

@@ -18,11 +18,13 @@
 @media all and (max-width: 925px) {
   .main {
     grid-template-columns: auto;
+    grid-gap: 1rem;
+    padding: 7rem 2rem 0 2rem;
   }
 }
 
 @media all and (max-width: 600px) {
   .main {
-    padding: 8rem 1rem 0 1rem;
+    padding: 6rem 1rem 0 1rem;
   }
 }

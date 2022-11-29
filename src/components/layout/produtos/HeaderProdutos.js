@@ -5,8 +5,8 @@ import ProdutosPagination from "./ProdutosPagination";
 const HeaderProdutos = ({ produtos, itensPorPag, pagAtual, setPagAtual }) => {
   const resultados = (
     <p className={classes.results}>
-      Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} |
-      <span>{produtos.length}</span> resultados
+      Página {pagAtual} de {Math.ceil(produtos.length / itensPorPag)} |{" "}
+      {produtos.length} resultados
     </p>
   );
 

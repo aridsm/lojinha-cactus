@@ -1,6 +1,7 @@
 .nav {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .nav button {
@@ -8,6 +9,8 @@
   width: 2rem;
   border-radius: 50%;
   transition: 0.1s;
+  display: grid;
+  place-items: center;
 }
 
 .nav svg {

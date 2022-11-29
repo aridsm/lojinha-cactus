@@ -36,6 +36,8 @@
 
 .quantidadeForm {
   text-align: right;
+  display: flex;
+  place-items: center;
 }
 
 .quantidadeForm input {
