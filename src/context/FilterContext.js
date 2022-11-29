@@ -45,7 +45,12 @@ const FilterContextProvider = ({ children }) => {
 
     //Filtrar por nome
     newFilter = newFilter.filter((prod) => {
-      return prod.nome.toLowerCase().startsWith(filter.name);
+      const prodNames = prod.nome.split(" ");
+      const productNameHasSearchValue = prodNames.some((name) => {
+        return name.toLowerCase().startsWith(filter.name);
+      });
+      if (productNameHasSearchValue) return prod;
+      return false;
     });
 
     //Filtrar por preço
