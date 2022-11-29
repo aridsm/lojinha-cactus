@@ -1,26 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import classes from './Modal.module.css';
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+import classes from "./Modal.module.css";
 
 const Backdrop = ({ onClose }) => {
-  return <div className={classes.backdrop} onClick={onClose}></div>
-}
+  return <div className={classes.backdrop} onClick={onClose}></div>;
+};
 
-const ModalContent = ({ children }) => {
-  return <div className={classes.modal}>
-    <div className={classes.content}>{children}</div>
-  </div>
-}
+const ModalContent = ({ children, isDarkMode }) => {
+  useEffect(() => {
+    console.log(isDarkMode);
+  }, [isDarkMode]);
 
-const Modal = ({ children, onClose }) => {
+  return (
+    <div className={`${classes.modal} ${isDarkMode ? "darkMode" : ""}`}>
+      <div className={classes.content}>
+        {children} {isDarkMode}
+      </div>
+    </div>
+  );
+};
 
-  const modalRoot = document.getElementById('modal');
+const Modal = ({ children, onClose, isDarkMode }) => {
+  const modalRoot = document.getElementById("modal");
   return (
     <>
       {ReactDOM.createPortal(<Backdrop onClose={onClose} />, modalRoot)}
-      {ReactDOM.createPortal(<ModalContent>{children}</ModalContent>, modalRoot)}
+      {ReactDOM.createPortal(
+        <ModalContent isDarkMode={isDarkMode}>{children}</ModalContent>,
+        modalRoot
+      )}
     </>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
