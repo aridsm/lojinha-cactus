@@ -42,6 +42,7 @@ const Header = ({ onShow }) => {
           <LogoSvg />
           Cactus
         </span>
+
         <SearchField />
 
         <button className={classes.carrinho} onClick={onShow}>
@@ -51,6 +52,7 @@ const Header = ({ onShow }) => {
             <span className={classes.valor}>{totalItensNoCarrinho}</span>
           </span>
         </button>
+
         <button
           className={classes.btnColorMode}
           onClick={changeMode}

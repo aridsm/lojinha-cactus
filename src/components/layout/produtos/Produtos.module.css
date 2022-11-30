@@ -28,3 +28,9 @@
     padding: 6rem 1rem 0 1rem;
   }
 }
+
+@media all and (max-width: 480px) {
+  .main {
+    padding: 8rem 1rem 0 1rem;
+  }
+}

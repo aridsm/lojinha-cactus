@@ -30,6 +30,7 @@
   --cor-6: #acb2ba;
   --cor-7: #2f3639;
   --cor-bg: #212628;
+  --sombra: 0px 4px 30px #2324245f;
   --border: 2px solid var(--cor-7);
 }
 .app {

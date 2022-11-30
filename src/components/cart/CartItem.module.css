@@ -6,8 +6,8 @@
   padding: 1.5rem 0;
 }
 
-.item+.item {
-  border-top: 1px solid #ddd;
+.item + .item {
+  border-top: 2px solid var(--cor-bg);
 }
 
 .imgDiv img {
@@ -24,22 +24,18 @@
 .preco {
   font-weight: bold;
   font-size: 1.3rem;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
 }
 
 .btn {
   margin-top: auto;
   align-self: flex-start;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
 }
 
 .item form input {
   max-width: 3rem;
-  background: var(--cor-7);
-  padding: .2rem;
-  border-radius: .2rem;
-  border: 1px solid #ccc;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 @media all and (max-width: 470px) {
@@ -47,13 +43,12 @@
     grid-template-columns: 3rem 1fr;
     grid-template-rows: 7rem;
     padding: 1rem 0;
-    grid-gap: .8rem;
+    grid-gap: 0.8rem;
   }
 
   form {
     grid-column: 2;
   }
-
 
   .imgDiv img {
     width: 3rem;

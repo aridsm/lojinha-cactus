@@ -38,12 +38,6 @@
 }
 
 .carrinho {
-  margin-right: 1rem;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.carrinho {
   display: flex;
   align-items: center;
   padding: 0.7rem;
@@ -51,6 +45,9 @@
   text-align: right;
   font-weight: 700;
   margin-left: auto;
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .carrinho:hover,
@@ -95,8 +92,8 @@
 
 .btnColorMode {
   background: var(--cor-7);
-  min-width: 2.2rem;
-  min-height: 2.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   margin-left: 0.5rem;
   display: grid;
@@ -106,59 +103,44 @@
 
 @media all and (max-width: 925px) {
   .header {
-    padding: 0 1rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0;
   }
   .cartTxt {
     visibility: hidden;
     position: absolute;
-  }
-
-  .btnMenu {
-    min-width: 2.5rem;
-    height: 2.5rem;
-    margin-left: auto;
-    display: grid;
-    place-items: center;
-    border-radius: 0.2rem;
-    transition: 0.1s;
-  }
-
-  .btnMenu:hover {
-    background: var(--cor-7);
-  }
-
-  .btnMenu.menuVisible {
-    border: 1px solid var(--cor-2);
-  }
-
-  .btnMenu svg {
-    transform: scale(2);
   }
   .logo {
     font-size: 1.2rem;
     margin-right: 1rem;
     flex-wrap: nowrap;
   }
-
-  .logo::before {
-    background-size: 1rem;
-    height: 1rem;
-    width: 1rem;
-  }
 }
-
 @media all and (max-width: 600px) {
-  .header {
-    left: 1rem;
-    width: calc(100% - 2rem);
+  .header .container {
+    padding: 1.2rem 1rem;
   }
 }
 
-@media all and (max-width: 500px) {
-  .header {
-    width: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 0;
+@media all and (max-width: 480px) {
+  .header .container {
+    height: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 4.5rem 3rem;
+    padding: 0.5rem 1rem;
+  }
+  .logo,
+  .carrinho,
+  .btnColorMode {
+    grid-row: 1;
+  }
+
+  .carrinho {
+    margin-left: initial;
+  }
+  .btnColorMode {
+    margin-left: auto;
   }
 }

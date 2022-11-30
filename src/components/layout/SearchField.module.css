@@ -30,3 +30,22 @@
   width: 1rem;
   height: 1rem;
 }
+
+@media all and (max-width: 600px) {
+  .btn {
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+  }
+  .iconSearch {
+    color: var(--cor-4);
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  .form {
+    grid-row: 2;
+    grid-column: 1 / 4;
+    max-width: 100%;
+  }
+}

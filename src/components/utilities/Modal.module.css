@@ -12,7 +12,7 @@
 }
 
 .content {
-  background: var(--cor-bg);
+  background: var(--cor-1);
   color: var(--cor-6);
   transform: translateY(-1rem);
   animation: 0.1s show forwards;
