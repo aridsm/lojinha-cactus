@@ -435,6 +435,15 @@ export const all_products = [
       "Vestibulum eget placerat mauris. Ut quis commodo tortor, a iaculis metus.",
   },
   {
+    nome: "Curabitur",
+    preco: "12.25",
+    img: "img7.webp",
+    categoria: "outros",
+    cor: "verde",
+    description:
+      "Vestibulum eget placerat mauris. Ut quis commodo tortor, a iaculis metus.",
+  },
+  {
     nome: "Hendrerit",
     preco: "41.75",
     img: "img54.webp",
@@ -458,15 +467,6 @@ export const all_products = [
     img: "img56.webp",
     categoria: "flores",
     cor: "roxo",
-    description:
-      "Vestibulum eget placerat mauris. Ut quis commodo tortor, a iaculis metus.",
-  },
-  {
-    nome: "Curabitur",
-    preco: "12.25",
-    img: "img7.webp",
-    categoria: "outros",
-    cor: "verde",
     description:
       "Vestibulum eget placerat mauris. Ut quis commodo tortor, a iaculis metus.",
   },

@@ -15,6 +15,10 @@
   background-color: var(--cor-2);
 }
 
+.button:active {
+  transform: scale(0.95);
+}
+
 @media all and (max-width: 700px) {
   .button:hover {
     transform: scale(1);

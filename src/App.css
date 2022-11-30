@@ -8,7 +8,7 @@
 
 :root {
   --cor-1: #f0f6f4;
-  --cor-2: #eddde3;
+  --cor-2: #e8c9d5;
   --cor-3: #a4b0ac;
   --cor-4: #ba607f;
   --cor-5: #edd0da;
@@ -23,7 +23,8 @@
 
 .darkMode {
   --cor-1: #292f31;
-  --cor-4: #9e2b5d;
+  --cor-2: #d0809c;
+  --cor-4: #952354;
   --cor-3: rgb(72, 81, 85);
   --cor-5: #d58ca6;
   --cor-6: #acb2ba;
@@ -35,11 +36,19 @@
   background: var(--cor-bg);
   color: var(--cor-6);
 }
+
 body {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 15px;
 }
+
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 input {
   border: none;
   outline: none;

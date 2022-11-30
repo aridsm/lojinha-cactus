@@ -3,6 +3,7 @@ import classes from "./Header.module.css";
 import { ReactComponent as IconCart } from "../../assets/cart.svg";
 import { ReactComponent as IconSun } from "../../assets/sun.svg";
 import { ReactComponent as IconMoon } from "../../assets/moon.svg";
+import { ReactComponent as LogoSvg } from "../../assets/logo.svg";
 import { CartContext } from "../../context/CartContext";
 import { ColorModeContext } from "../../context/ColorModeContext";
 import SearchField from "./SearchField";
@@ -36,23 +37,28 @@ const Header = ({ onShow }) => {
     <header
       className={`${classes.header} ${pageScrolled ? classes.scroll : ""}`}
     >
-      <span className={classes.logo}>Cactus</span>
-      <SearchField />
-
-      <button className={classes.carrinho} onClick={onShow}>
-        <span className={classes.cartTxt}>Seu carrinho</span>
-        <span className={classes.quantidade}>
-          <IconCart />
-          <span className={classes.valor}>{totalItensNoCarrinho}</span>
+      <div className={`container ${classes.container}`}>
+        <span className={classes.logo}>
+          <LogoSvg />
+          Cactus
         </span>
-      </button>
-      <button
-        className={classes.btnColorMode}
-        onClick={changeMode}
-        title={isDarkMode ? "Ativar modo claro" : "Ativar modo escuro"}
-      >
-        {isDarkMode ? <IconSun /> : <IconMoon />}
-      </button>
+        <SearchField />
+
+        <button className={classes.carrinho} onClick={onShow}>
+          <span className={classes.cartTxt}>Seu carrinho</span>
+          <span className={classes.quantidade}>
+            <IconCart />
+            <span className={classes.valor}>{totalItensNoCarrinho}</span>
+          </span>
+        </button>
+        <button
+          className={classes.btnColorMode}
+          onClick={changeMode}
+          title={isDarkMode ? "Ativar modo claro" : "Ativar modo escuro"}
+        >
+          {isDarkMode ? <IconSun /> : <IconMoon />}
+        </button>
+      </div>
     </header>
   );
 };
