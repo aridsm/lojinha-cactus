@@ -44,6 +44,9 @@ input {
   border: none;
   outline: none;
   background: var(--cor-bg);
+  border: var(--border);
+  padding: 0.2rem;
+  border-radius: 8px;
 }
 
 a {

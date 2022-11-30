@@ -6,7 +6,7 @@ import ListaProdutos from "./ListaProdutos";
 const Produtos = () => {
   return (
     <main className={classes.main}>
-      <p className={classes.navCatalogo}>Home - Catálogo</p>
+      <p className={classes.navCatalogo}>Home / Catálogo</p>
       <Filtro />
       <ListaProdutos />
     </main>

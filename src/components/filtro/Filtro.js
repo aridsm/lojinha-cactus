@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { FilterContext } from "../../context/FilterContext";
 import WrapperButton from "../utilities/WrapperButton";
 import ButtonFechar from "../utilities/ButtonFechar";
@@ -12,7 +18,11 @@ import { ReactComponent as IconFiltro } from "../../assets/funnel.svg";
 const Filtro = () => {
   const refBtnFiltro = useRef();
   const { menuVisible, setMenuVisible } = useVisibility(refBtnFiltro);
-  const { saveFilter, initialFilter } = useContext(FilterContext);
+  const {
+    saveFilter,
+    initialFilter,
+    filter: filterSaved,
+  } = useContext(FilterContext);
 
   const [filter, setFilter] = useState(initialFilter);
 
@@ -47,8 +57,11 @@ const Filtro = () => {
 
   const cleanFilter = () => {
     saveFilter(initialFilter);
-    setFilter(initialFilter);
   };
+
+  useEffect(() => {
+    setFilter(filterSaved);
+  }, [filterSaved]);
 
   return (
     <>
@@ -65,8 +78,11 @@ const Filtro = () => {
               className={classes.btnFechar}
             />
             <h2>Filtrar pesquisa</h2>
-            <FormCategoria setFilter={setFilterCategories} />
-            <FormCores setFilter={setFilterColors} />
+            <FormCategoria
+              setFilter={setFilterCategories}
+              filterVal={filter.categories}
+            />
+            <FormCores setFilter={setFilterColors} filterVal={filter.colors} />
             <FormPreco setFilter={setFilterPrices} />
 
             <WrapperButton className={classes.btn} onClick={applyFilter}>

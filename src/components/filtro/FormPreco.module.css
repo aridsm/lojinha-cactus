@@ -1,9 +1,6 @@
 .form input {
   width: 4rem;
-  border: var(--border);
   margin-left: auto;
-  padding: 0.2rem;
-  border-radius: 8px;
 }
 
 .form label {

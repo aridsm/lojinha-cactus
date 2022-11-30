@@ -43,10 +43,7 @@
 .quantidadeForm input {
   width: 3rem;
   height: 2.5rem;
-  padding: 0.2rem;
   margin-left: 0.2rem;
-  border-radius: 8px;
-  border: var(--border);
 }
 
 .quantidadeForm label > span {

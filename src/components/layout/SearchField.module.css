@@ -6,11 +6,9 @@
 }
 
 .form input {
-  background: var(--cor-bg);
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
   margin-right: 0.5rem;
   flex: 1;
+  padding: 0.5rem;
 }
 
 .form input:focus {

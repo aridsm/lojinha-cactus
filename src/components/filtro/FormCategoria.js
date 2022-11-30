@@ -4,8 +4,9 @@ import classes from "./FormCategoria.module.css";
 
 const categorias = ["flores", "cactos", "outros"];
 
-const FormCategoria = ({ setFilter }) => {
-  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]);
+const FormCategoria = ({ setFilter, filterVal }) => {
+  const [categoriasSelecionadas, setCategoriasSelecionadas] =
+    useState(filterVal);
 
   const handleChange = ({ target }) => {
     if (target.checked) {
@@ -20,6 +21,10 @@ const FormCategoria = ({ setFilter }) => {
   useEffect(() => {
     setFilter(categoriasSelecionadas);
   }, [categoriasSelecionadas, setFilter]);
+
+  useEffect(() => {
+    setCategoriasSelecionadas(filterVal);
+  }, [filterVal]);
 
   return (
     <WrapperFiltroSection title="Categorias">

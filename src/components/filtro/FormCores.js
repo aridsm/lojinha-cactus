@@ -50,7 +50,7 @@ const cores = [
   },
 ];
 
-const FormCores = ({ setFilter }) => {
+const FormCores = ({ setFilter, filterVal }) => {
   const [selectedColors, setSelectedColors] = useState([]);
 
   //Trocar cores selecionadas
@@ -67,6 +67,10 @@ const FormCores = ({ setFilter }) => {
   useEffect(() => {
     setFilter(selectedColors);
   }, [setFilter, selectedColors]);
+
+  useEffect(() => {
+    setSelectedColors(filterVal);
+  }, [filterVal]);
 
   return (
     <WrapperFiltroSection title="Cores">
