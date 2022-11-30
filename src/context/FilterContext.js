@@ -27,6 +27,21 @@ const FilterContextProvider = ({ children }) => {
     setFilter((currVal) => ({ ...currVal, name: "" }));
   };
 
+  const deleteFilter = (valToDelete, filterName) => {
+    setFilter((currVal) => {
+      const newArray = currVal[filterName].filter((val) => val !== valToDelete);
+      return { ...currVal, [filterName]: [...newArray] };
+    });
+  };
+
+  const deleteColor = (colorToDelete) => {
+    deleteFilter(colorToDelete, "colors");
+  };
+
+  const deleteCategory = (categoryToDelete) => {
+    deleteFilter(categoryToDelete, "categories");
+  };
+
   //Filtragem
   useEffect(() => {
     let newFilter = {};
@@ -75,6 +90,8 @@ const FilterContextProvider = ({ children }) => {
         saveFilter,
         saveInputSearchVal,
         deleteInputSearchVal,
+        deleteColor,
+        deleteCategory,
         filteredProducts,
         initialFilter,
         filter,

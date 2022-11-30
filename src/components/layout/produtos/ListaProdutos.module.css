@@ -33,6 +33,19 @@
   color: var(--cor-4);
   width: auto;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.filterList li button {
+  display: grid;
+  place-items: center;
+  margin-left: 0.5rem;
+}
+
+.filterList li svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .erro {
@@ -49,7 +62,7 @@
 .searchName button {
   display: grid;
   place-items: center;
-  margin-left: 0.2rem;
+  margin-right: 0.5rem;
 }
 
 .searchName button svg {
