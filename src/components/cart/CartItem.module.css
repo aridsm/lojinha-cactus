@@ -41,7 +41,7 @@
 @media all and (max-width: 470px) {
   .item {
     grid-template-columns: 3rem 1fr;
-    grid-template-rows: 7rem;
+    grid-template-rows: 6rem;
     padding: 1rem 0;
     grid-gap: 0.8rem;
   }

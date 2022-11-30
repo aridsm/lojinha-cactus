@@ -37,6 +37,9 @@
     display: grid;
     place-items: center;
   }
+}
+
+@media all and (max-width: 480px) {
   .iconSearch {
     color: var(--cor-4);
     width: 0.7rem;
@@ -47,5 +50,7 @@
     grid-row: 2;
     grid-column: 1 / 4;
     max-width: 100%;
+    border-top: var(--border);
+    padding-top: 0.5rem;
   }
 }

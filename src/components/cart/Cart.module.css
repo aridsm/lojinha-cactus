@@ -21,7 +21,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem 1.2rem 2rem;
-  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: var(--sombra);
 }
 
 .total span {
@@ -36,6 +36,7 @@
 @media all and (max-width: 470px) {
   .cartLista {
     padding: 0 1.2rem;
+    max-height: 40vh;
   }
 
   .header {
