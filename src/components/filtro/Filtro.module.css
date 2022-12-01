@@ -40,24 +40,32 @@
   .filtro {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     z-index: 999;
-    padding: 2rem 3rem;
+    padding: 3rem 3.5rem;
     height: 100vh;
+    overflow: auto;
+    visibility: hidden;
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+  .filtro.filtroVisible {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
   }
   .filtroContainer {
     grid-row: 1;
-    position: relative;
+    position: absolute;
+    right: 2rem;
   }
   .btnOpenFilter {
-    display: block;
     display: grid;
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.2rem;
     transition: 0.1s;
-    margin-left: auto;
   }
 
   .btnOpenFilter:hover {
@@ -65,7 +73,7 @@
   }
 
   .btnOpenFilter.filtroVisible {
-    border: 1px solid var(--cor-2);
+    border: 2px solid var(--cor-2);
   }
 
   .btnOpenFilter svg {

@@ -1,34 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const useVisibility = (ref) => {
-
-  const [menuVisible, setMenuVisible] = useState(true);
+  const [elementVisible, setElementVisible] = useState(true);
 
   useEffect(() => {
     const hideMenu = (e) => {
       if (ref && e.target !== ref.current && !ref.current.contains(e.target)) {
-        setMenuVisible(false)
+        setElementVisible(false);
       }
-    }
+    };
 
     const resizeWindow = () => {
       if (window.innerWidth < 925) {
-        setMenuVisible(false);
+        setElementVisible(false);
 
-        document.addEventListener('click', hideMenu)
+        document.addEventListener("click", hideMenu);
       } else {
-        setMenuVisible(true)
-        document.removeEventListener('click', hideMenu)
+        setElementVisible(true);
+        document.removeEventListener("click", hideMenu);
       }
-    }
+    };
     resizeWindow();
 
-    window.addEventListener('resize', resizeWindow)
-    return () => window.removeEventListener('resize', resizeWindow)
-  }, [ref])
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  }, [ref]);
 
-  return { menuVisible, setMenuVisible }
+  return { elementVisible, setElementVisible };
+};
 
-}
-
-export default useVisibility
+export default useVisibility;

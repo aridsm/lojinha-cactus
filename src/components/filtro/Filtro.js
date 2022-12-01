@@ -17,7 +17,7 @@ import { ReactComponent as IconFiltro } from "../../assets/funnel.svg";
 
 const Filtro = () => {
   const refBtnFiltro = useRef();
-  const { menuVisible, setMenuVisible } = useVisibility(refBtnFiltro);
+  const { elementVisible, setElementVisible } = useVisibility(refBtnFiltro);
   const {
     saveFilter,
     initialFilter,
@@ -41,11 +41,11 @@ const Filtro = () => {
   const btnFiltro = (
     <button
       className={`${classes.btnOpenFilter} ${
-        menuVisible ? classes.filtroVisible : ""
+        elementVisible ? classes.filtroVisible : ""
       }`}
       aria-label="Abrir filtro"
       type="button"
-      onClick={() => setMenuVisible(true)}
+      onClick={() => setElementVisible((currVal) => !currVal)}
     >
       <IconFiltro />
     </button>
@@ -65,34 +65,32 @@ const Filtro = () => {
 
   return (
     <>
-      <div ref={refBtnFiltro} className={classes.filtroContainer}>
+      <div className={classes.filtroContainer} ref={refBtnFiltro}>
         {btnFiltro}
-        {menuVisible && (
-          <section
-            className={`${classes.filtro} ${
-              menuVisible ? classes.filtroVisible : ""
-            }`}
-          >
-            <ButtonFechar
-              onClose={() => setMenuVisible(false)}
-              className={classes.btnFechar}
-            />
-            <h2>Filtrar pesquisa</h2>
-            <FormCategoria
-              setFilter={setFilterCategories}
-              filterVal={filter.categories}
-            />
-            <FormCores setFilter={setFilterColors} filterVal={filter.colors} />
-            <FormPreco setFilter={setFilterPrices} />
+        <section
+          className={`${classes.filtro} ${
+            elementVisible ? classes.filtroVisible : ""
+          }`}
+        >
+          <ButtonFechar
+            onClose={() => setElementVisible(false)}
+            className={classes.btnFechar}
+          />
+          <h2>Filtrar pesquisa</h2>
+          <FormCategoria
+            setFilter={setFilterCategories}
+            filterVal={filter.categories}
+          />
+          <FormCores setFilter={setFilterColors} filterVal={filter.colors} />
+          <FormPreco setFilter={setFilterPrices} />
 
-            <WrapperButton className={classes.btn} onClick={applyFilter}>
-              Aplicar filtro
-            </WrapperButton>
-            <button onClick={cleanFilter} className={classes.btnLimpar}>
-              Limpar filtro
-            </button>
-          </section>
-        )}
+          <WrapperButton className={classes.btn} onClick={applyFilter}>
+            Aplicar filtro
+          </WrapperButton>
+          <button onClick={cleanFilter} className={classes.btnLimpar}>
+            Limpar filtro
+          </button>
+        </section>
       </div>
     </>
   );
