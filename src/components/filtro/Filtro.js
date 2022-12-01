@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import { FilterContext } from "../../context/FilterContext";
+import { AlertContext } from "../../context/AlertContext";
 import WrapperButton from "../utilities/WrapperButton";
 import ButtonFechar from "../utilities/ButtonFechar";
 import classes from "./Filtro.module.css";
@@ -23,6 +24,7 @@ const Filtro = () => {
     initialFilter,
     filter: filterSaved,
   } = useContext(FilterContext);
+  const { showAlert } = useContext(AlertContext);
 
   const [filter, setFilter] = useState(initialFilter);
 
@@ -53,10 +55,12 @@ const Filtro = () => {
 
   const applyFilter = () => {
     saveFilter(filter);
+    showAlert("Filtro aplicado");
   };
 
   const cleanFilter = () => {
     saveFilter(initialFilter);
+    showAlert("Filtro excluído");
   };
 
   useEffect(() => {

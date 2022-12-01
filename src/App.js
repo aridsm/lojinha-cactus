@@ -6,11 +6,14 @@ import { useContext, useState } from "react";
 import CompraFinalizada from "./components/cart/CompraFinalizada/CompraFinalizada";
 import { ColorModeContext } from "./context/ColorModeContext";
 import "./App.css";
+import Alert from "./components/alert/Alert";
+import { AlertContext } from "./context/AlertContext";
 
 function App() {
   const [cartVisivel, setCartVisivel] = useState(false);
   const [compraFinalizadaModal, setCompraFinalizadaModal] = useState(false);
   const { isDarkMode } = useContext(ColorModeContext);
+  const { alertIsShown, alertContent } = useContext(AlertContext);
 
   const closeCartHandler = () => {
     setCartVisivel(false);
@@ -25,17 +28,23 @@ function App() {
     setCompraFinalizadaModal(true);
   };
   return (
-    <div className={`app ${isDarkMode ? "darkMode" : ""}`}>
-      {cartVisivel && (
-        <Cart onClose={closeCartHandler} onShowFinal={showFinalModalHandler} />
-      )}
-      {compraFinalizadaModal && (
-        <CompraFinalizada onClose={closeFinalModalHandler} />
-      )}
-      <Header onShow={showCartHandler} />
-      <Produtos />
-      <Footer />
-    </div>
+    <>
+      <Alert alertIsShown={alertIsShown} content={alertContent} />
+      <div className={`app ${isDarkMode ? "darkMode" : ""}`}>
+        {cartVisivel && (
+          <Cart
+            onClose={closeCartHandler}
+            onShowFinal={showFinalModalHandler}
+          />
+        )}
+        {compraFinalizadaModal && (
+          <CompraFinalizada onClose={closeFinalModalHandler} />
+        )}
+        <Header onShow={showCartHandler} />
+        <Produtos />
+        <Footer />
+      </div>
+    </>
   );
 }
 

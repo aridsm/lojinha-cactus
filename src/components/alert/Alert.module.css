@@ -1,0 +1,30 @@
+.alert {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 1.5rem;
+  width: 15rem;
+  border-radius: 10px;
+  background: var(--cor-5);
+  box-shadow: var(--sombra);
+  color: var(--cor-4);
+  font-weight: bold;
+  z-index: 9999;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  animation: anima 0.2s forwards;
+}
+
+@keyframes anima {
+  from {
+    transform: translateY(-1rem);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

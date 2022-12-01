@@ -4,6 +4,7 @@ import App from "./App";
 import FilterContextProvider from "./context/FilterContext";
 import CartContextProvider from "./context/CartContext";
 import ColorModeContextProvider from "./context/ColorModeContext";
+import AlertContextProvider from "./context/AlertContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,7 +12,9 @@ root.render(
     <FilterContextProvider>
       <CartContextProvider>
         <ColorModeContextProvider>
-          <App />
+          <AlertContextProvider>
+            <App />
+          </AlertContextProvider>
         </ColorModeContextProvider>
       </CartContextProvider>
     </FilterContextProvider>
