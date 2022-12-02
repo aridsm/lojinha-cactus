@@ -1,22 +1,22 @@
 import React from "react";
-import classes from "./ProdutosPagination.module.css";
+import classes from "./ProductsPagination.module.css";
 import { ReactComponent as ArrowLeft } from "../../../assets/arrow-left.svg";
 import { ReactComponent as ArrowRight } from "../../../assets/arrow-right.svg";
 
-const ProdutosPagination = ({
-  produtos,
-  itensPorPag,
-  setPagAtual,
-  pagAtual,
+const ProductsPagination = ({
+  products,
+  itemsPerPage,
+  currPage,
+  setCurrPage,
 }) => {
-  const paginas = [];
-  const totalPaginas = Math.ceil(produtos.length / itensPorPag);
-  for (let i = 1; i <= totalPaginas; i++) {
-    paginas.push(i);
+  const pages = [];
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  for (let i = 1; i <= totalPages; i++) {
+    pages.push(i);
   }
 
   const handleClickNumber = (e) => {
-    setPagAtual(e.currentTarget.innerText);
+    setCurrPage(e.currentTarget.innerText);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -24,36 +24,36 @@ const ProdutosPagination = ({
     if (pageValue < 1) {
       return;
     }
-    if (pageValue > +totalPaginas) {
+    if (pageValue > +totalPages) {
       return;
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setPagAtual(pageValue);
+    setCurrPage(pageValue);
   };
 
   return (
     <>
-      {paginas.length > 1 && (
+      {pages.length > 1 && (
         <nav className={classes.nav}>
           <button
-            onClick={() => handleClickPage(+pagAtual - 1)}
+            onClick={() => handleClickPage(+currPage - 1)}
             title="página anterior"
           >
             <ArrowLeft />
           </button>
-          {paginas.map((pag) => (
+          {pages.map((pag) => (
             <button
               key={pag}
               onClick={handleClickNumber}
               className={`${classes.pagNumber} ${
-                +pag === +pagAtual ? classes.pagAtual : ""
+                +pag === +currPage ? classes.currPage : ""
               }`}
             >
               {pag}
             </button>
           ))}
           <button
-            onClick={() => handleClickPage(+pagAtual + 1)}
+            onClick={() => handleClickPage(+currPage + 1)}
             title="próxima página"
           >
             <ArrowRight />
@@ -64,4 +64,4 @@ const ProdutosPagination = ({
   );
 };
 
-export default ProdutosPagination;
+export default ProductsPagination;

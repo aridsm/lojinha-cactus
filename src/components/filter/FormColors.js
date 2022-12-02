@@ -1,50 +1,50 @@
 import React, { useEffect, useState } from "react";
 import WrapperFiltroSection from "../utilities/WrapperFiltroSection";
-import classes from "./FormCores.module.css";
+import classes from "./FormColors.module.css";
 
-const cores = [
+const colors = [
   {
-    cor: "rosa",
+    colorName: "rosa",
     bg: "#FE96C2",
-    color: "#570B2B",
+    hex: "#570B2B",
   },
   {
-    cor: "verde",
+    colorName: "verde",
     bg: "#7FD878",
-    color: "#245320",
+    hex: "#245320",
   },
   {
-    cor: "laranja",
+    colorName: "laranja",
     bg: "#F4B770",
-    color: "#563309",
+    hex: "#563309",
   },
   {
-    cor: "azul",
+    colorName: "azul",
     bg: "#96C0FE",
-    color: "#1F3556",
+    hex: "#1F3556",
   },
   {
-    cor: "vermelho",
+    colorName: "vermelho",
     bg: "#F56F6B",
-    color: "#520F0F",
+    hex: "#520F0F",
   },
   {
-    cor: "roxo",
+    colorName: "roxo",
     bg: "#B796FE",
-    color: "#2A1B4A",
+    hex: "#2A1B4A",
   },
   {
-    cor: "amarelo",
+    colorName: "amarelo",
     bg: "#F1F371",
-    color: "#4A4B0A",
+    hex: "#4A4B0A",
   },
   {
-    cor: "preto",
+    colorName: "preto",
     bg: "#5C5C5C",
     color: "#FFFFFF",
   },
   {
-    cor: "branco",
+    colorName: "branco",
     bg: "#FFFFFF",
     color: "#2C2C2C",
   },
@@ -74,29 +74,29 @@ const FormCores = ({ setFilter, filterVal }) => {
 
   return (
     <WrapperFiltroSection title="Cores">
-      <form className={classes.listaCores}>
-        {cores.map((item) => (
+      <form className={classes.listColors}>
+        {colors.map((item) => (
           <div
-            className={`${classes.corItem} ${
-              selectedColors.includes(item.cor) ? classes.checked : ""
+            className={`${classes.colorItem} ${
+              selectedColors.includes(item.colorName) ? classes.checked : ""
             }`}
-            key={item.cor}
+            key={item.colorName}
           >
             <label
-              htmlFor={item.cor}
-              style={{ backgroundColor: item.bg, color: item.color }}
-              className={classes.btnCor}
-              title={item.cor}
+              htmlFor={item.colorName}
+              style={{ backgroundColor: item.bg, color: item.hex }}
+              className={classes.btnColor}
+              title={item.colorName}
             >
-              <span>{item.cor}</span>
+              <span>{item.colorName}</span>
             </label>
             <input
               type="checkbox"
-              name="cores"
-              id={item.cor}
-              value={item.cor}
+              name="colors"
+              id={item.colorName}
+              value={item.colorName}
               onChange={handleChange}
-              checked={selectedColors.includes(item.cor)}
+              checked={selectedColors.includes(item.colorName)}
             />
           </div>
         ))}

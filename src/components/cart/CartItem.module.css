@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-.preco {
+.price {
   font-weight: bold;
   font-size: 1.3rem;
   margin-top: 0.3rem;
@@ -59,7 +59,7 @@
     max-width: 2.5rem;
   }
 
-  .preco {
+  .price {
     font-size: 1.1rem;
   }
 }

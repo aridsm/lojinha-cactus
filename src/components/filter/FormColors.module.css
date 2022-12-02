@@ -1,26 +1,26 @@
-.btnCor {
+.btnColor {
   border-radius: 0.2rem;
   text-transform: capitalize;
   min-width: 1.8rem;
   min-height: 1.8rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.btnCor span {
+.btnColor span {
   position: absolute;
   visibility: hidden;
 }
-.listaCores {
+.listColors {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-gap: 0.7rem;
 }
 
-.corItem {
+.colorItem {
   position: relative;
 }
 
-.corItem label {
+.colorItem label {
   display: block;
   width: 100%;
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.05);
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-.corItem label:hover {
+.colorItem label:hover {
   transform: scale(1.05);
 }
 
@@ -37,7 +37,7 @@
   box-shadow: 0 0 0 2px var(--cor-1), 0 0 0 3px #adadb1;
 }
 
-.corItem input {
+.colorItem input {
   position: absolute;
   z-index: -99;
   visibility: hidden;

@@ -24,12 +24,13 @@
 }
 
 .nav button:hover {
-  color: var(--cor-2);
+  color: var(--cor-4);
 }
 
-.pagAtual {
+.currPage {
   border-radius: 0.2rem;
-  background: var(--cor-7);
+  background: var(--cor-5);
+  color: var(--cor-4);
 }
 
 @media all and (max-width: 550px) {

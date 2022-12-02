@@ -1,47 +1,47 @@
 import Header from "./components/layout/Header";
-import Produtos from "./components/layout/produtos/Produtos";
+import Products from "./components/layout/products/Products";
 import Footer from "./components/layout/Footer";
 import Cart from "./components/cart/Cart";
 import { useContext, useState } from "react";
-import CompraFinalizada from "./components/cart/CompraFinalizada/CompraFinalizada";
+import PurchaseSuccess from "./components/cart/finishedPurchase/PurchaseSuccess";
 import { ColorModeContext } from "./context/ColorModeContext";
 import "./App.css";
 import Alert from "./components/alert/Alert";
 import { AlertContext } from "./context/AlertContext";
 
 function App() {
-  const [cartVisivel, setCartVisivel] = useState(false);
-  const [compraFinalizadaModal, setCompraFinalizadaModal] = useState(false);
+  const [isCartVisible, setIsCartVisible] = useState(false);
+  const [purchaseFinishedModal, setPurchaseFinishedModal] = useState(false);
   const { isDarkMode } = useContext(ColorModeContext);
   const { alertIsShown, alertContent } = useContext(AlertContext);
 
   const closeCartHandler = () => {
-    setCartVisivel(false);
+    setIsCartVisible(false);
   };
   const showCartHandler = () => {
-    setCartVisivel(true);
+    setIsCartVisible(true);
   };
   const closeFinalModalHandler = () => {
-    setCompraFinalizadaModal(false);
+    setPurchaseFinishedModal(false);
   };
   const showFinalModalHandler = () => {
-    setCompraFinalizadaModal(true);
+    setPurchaseFinishedModal(true);
   };
   return (
     <>
       <Alert alertIsShown={alertIsShown} content={alertContent} />
       <div className={`app ${isDarkMode ? "darkMode" : ""}`}>
-        {cartVisivel && (
+        {isCartVisible && (
           <Cart
             onClose={closeCartHandler}
             onShowFinal={showFinalModalHandler}
           />
         )}
-        {compraFinalizadaModal && (
-          <CompraFinalizada onClose={closeFinalModalHandler} />
+        {purchaseFinishedModal && (
+          <PurchaseSuccess onClose={closeFinalModalHandler} />
         )}
         <Header onShow={showCartHandler} />
-        <Produtos />
+        <Products />
         <Footer />
       </div>
     </>

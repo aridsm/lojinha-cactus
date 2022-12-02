@@ -9,12 +9,12 @@ import { ColorModeContext } from "../../context/ColorModeContext";
 import SearchField from "./SearchField";
 
 const Header = ({ onShow }) => {
-  const { itensCart } = useContext(CartContext);
+  const { itemsCart } = useContext(CartContext);
   const { changeMode, isDarkMode } = useContext(ColorModeContext);
   const [pageScrolled, setPageScrolled] = useState(false);
 
-  const totalItensNoCarrinho = itensCart.itens.reduce((prev, curr) => {
-    return prev + curr.quantidade;
+  const totalItemsInTheCart = itemsCart.items.reduce((prev, curr) => {
+    return prev + curr.amount;
   }, 0);
 
   useEffect(() => {
@@ -45,11 +45,11 @@ const Header = ({ onShow }) => {
 
         <SearchField />
 
-        <button className={classes.carrinho} onClick={onShow}>
+        <button className={classes.cart} onClick={onShow}>
           <span className={classes.cartTxt}>Seu carrinho</span>
-          <span className={classes.quantidade}>
+          <span className={classes.amount}>
             <IconCart />
-            <span className={classes.valor}>{totalItensNoCarrinho}</span>
+            <span className={classes.value}>{totalItemsInTheCart}</span>
           </span>
         </button>
 

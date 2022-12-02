@@ -1,9 +1,9 @@
-.produtos {
+.products {
   grid-row: 1 / 4;
   grid-column: 2;
 }
 
-.produtos h1 {
+.products h1 {
   font-weight: 500;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -18,12 +18,12 @@
   margin: 2rem 0;
 }
 
-.erro {
+.error {
   margin-top: 2rem;
 }
 
 @media all and (max-width: 925px) {
-  .produtos {
+  .products {
     grid-column: 1;
     grid-row: 2;
   }

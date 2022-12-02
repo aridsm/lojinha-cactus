@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import WrapperFiltroSection from "../utilities/WrapperFiltroSection";
-import classes from "./FormPreco.module.css";
+import classes from "./FormPrice.module.css";
 
-const FormPreco = ({ setFilter }) => {
+const FormPrice = ({ setFilter }) => {
   const [prices, setPrices] = useState({ min: 0, max: 1000 });
 
   const handleChangeMin = ({ target }) => {
@@ -48,4 +48,4 @@ const FormPreco = ({ setFilter }) => {
   );
 };
 
-export default FormPreco;
+export default FormPrice;

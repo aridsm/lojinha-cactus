@@ -49,18 +49,18 @@ const FilterContextProvider = ({ children }) => {
     //Filtrar por cor
     newFilter = all_products.filter((prod) => {
       if (filter.colors.length === 0) return true;
-      return filter.colors.indexOf(prod.cor) >= 0;
+      return filter.colors.indexOf(prod.color) >= 0;
     });
 
     //Filtrar por categoria
     newFilter = newFilter.filter((prod) => {
       if (filter.categories.length === 0) return true;
-      return filter.categories.indexOf(prod.categoria) >= 0;
+      return filter.categories.indexOf(prod.category) >= 0;
     });
 
     //Filtrar por nome
     newFilter = newFilter.filter((prod) => {
-      const prodNames = prod.nome.split(" ");
+      const prodNames = prod.name.split(" ");
       const productNameHasSearchValue = prodNames.some((name) => {
         return name.toLowerCase().startsWith(filter.name);
       });
@@ -71,7 +71,7 @@ const FilterContextProvider = ({ children }) => {
     //Filtrar por preço
     newFilter = newFilter.filter((prod) => {
       return (
-        prod.preco >= +filter.prices?.min && prod.preco <= +filter.prices?.max
+        prod.price >= +filter.prices?.min && prod.price <= +filter.prices?.max
       );
     });
 

@@ -8,17 +8,17 @@ import React, {
 import { FilterContext } from "../../context/FilterContext";
 import { AlertContext } from "../../context/AlertContext";
 import WrapperButton from "../utilities/WrapperButton";
-import ButtonFechar from "../utilities/ButtonFechar";
-import classes from "./Filtro.module.css";
-import FormCategoria from "./FormCategoria";
-import FormCores from "./FormCores";
-import FormPreco from "./FormPreco";
+import ButtonClose from "../utilities/ButtonClose";
+import classes from "./Filter.module.css";
+import FormCategory from "./FormCategory";
+import FormColors from "./FormColors";
+import FormPrice from "./FormPrice";
 import useVisibility from "../../customHook/useVisibility";
-import { ReactComponent as IconFiltro } from "../../assets/funnel.svg";
+import { ReactComponent as IconFilter } from "../../assets/funnel.svg";
 
-const Filtro = () => {
-  const refBtnFiltro = useRef();
-  const { elementVisible, setElementVisible } = useVisibility(refBtnFiltro);
+const Filter = () => {
+  const refBtnFilter = useRef();
+  const { elementVisible, setElementVisible } = useVisibility(refBtnFilter);
   const {
     saveFilter,
     initialFilter,
@@ -40,7 +40,7 @@ const Filtro = () => {
     setFilter((currVal) => ({ ...currVal, categories }));
   }, []);
 
-  const btnFiltro = (
+  const btnFilter = (
     <button
       className={`${classes.btnOpenFilter} ${
         elementVisible ? classes.filtroVisible : ""
@@ -49,7 +49,7 @@ const Filtro = () => {
       type="button"
       onClick={() => setElementVisible((currVal) => !currVal)}
     >
-      <IconFiltro />
+      <IconFilter />
     </button>
   );
 
@@ -69,29 +69,29 @@ const Filtro = () => {
 
   return (
     <>
-      <div className={classes.filtroContainer} ref={refBtnFiltro}>
-        {btnFiltro}
+      <div className={classes.filterContainer} ref={refBtnFilter}>
+        {btnFilter}
         <section
-          className={`${classes.filtro} ${
-            elementVisible ? classes.filtroVisible : ""
+          className={`${classes.filter} ${
+            elementVisible ? classes.filterVisible : ""
           }`}
         >
-          <ButtonFechar
+          <ButtonClose
             onClose={() => setElementVisible(false)}
-            className={classes.btnFechar}
+            className={classes.btnClose}
           />
           <h2>Filtrar pesquisa</h2>
-          <FormCategoria
+          <FormCategory
             setFilter={setFilterCategories}
             filterVal={filter.categories}
           />
-          <FormCores setFilter={setFilterColors} filterVal={filter.colors} />
-          <FormPreco setFilter={setFilterPrices} />
+          <FormColors setFilter={setFilterColors} filterVal={filter.colors} />
+          <FormPrice setFilter={setFilterPrices} />
 
           <WrapperButton className={classes.btn} onClick={applyFilter}>
             Aplicar filtro
           </WrapperButton>
-          <button onClick={cleanFilter} className={classes.btnLimpar}>
+          <button onClick={cleanFilter} className={classes.btnClear}>
             Limpar filtro
           </button>
         </section>
@@ -100,4 +100,4 @@ const Filtro = () => {
   );
 };
 
-export default Filtro;
+export default Filter;

@@ -37,7 +37,7 @@
   margin-right: 0.5rem;
 }
 
-.carrinho {
+.cart {
   display: flex;
   align-items: center;
   padding: 0.7rem;
@@ -50,24 +50,24 @@
   font-size: 12px;
 }
 
-.carrinho:hover,
+.cart:hover,
 .conta:hover {
   color: var(--cor-2);
 }
 
-.carrinho svg {
+.cart svg {
   transform: scale(1.3);
   width: 30px;
   margin-left: 0.5rem;
 }
 
-.quantidade {
+.amount {
   position: relative;
   display: grid;
   place-items: center;
 }
 
-.valor {
+.value {
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
@@ -132,12 +132,12 @@
     padding: 0.5rem 1rem;
   }
   .logo,
-  .carrinho,
+  .cart,
   .btnColorMode {
     grid-row: 1;
   }
 
-  .carrinho {
+  .cart {
     margin-left: initial;
   }
   .btnColorMode {

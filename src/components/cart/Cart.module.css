@@ -1,4 +1,4 @@
-.cartLista {
+.cartList {
   padding: 0 2rem;
   max-height: 22rem;
   overflow: auto;
@@ -29,12 +29,12 @@
   font-size: 1.3rem;
 }
 
-.semItens {
+.noItems {
   padding: 2rem 0 3rem 0;
 }
 
 @media all and (max-width: 470px) {
-  .cartLista {
+  .cartList {
     padding: 0 1.2rem;
     max-height: 40vh;
   }

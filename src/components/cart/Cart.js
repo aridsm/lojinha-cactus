@@ -4,21 +4,21 @@ import Modal from "../utilities/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import WrapperButton from "../utilities/WrapperButton";
-import ButtonFechar from "../utilities/ButtonFechar";
+import ButtonClose from "../utilities/ButtonClose";
 import { ColorModeContext } from "../../context/ColorModeContext";
 
 const Cart = ({ onClose, onShowFinal }) => {
-  const { itensCart, updateQuantidade, removeItem, removeAll } =
+  const { itemsCart, updateAmount, removeItem, removeAll } =
     useContext(CartContext);
 
-  const listaItensCart = itensCart.itens.map((item) => (
+  const listItemsCart = itemsCart.items.map((item) => (
     <CartItem
-      key={item.nome}
-      nome={item.nome}
-      preco={item.preco}
+      key={item.name}
+      name={item.name}
+      price={item.price}
       img={item.img}
-      quantidade={item.quantidade}
-      updateQuantidade={updateQuantidade}
+      amount={item.amount}
+      updateAmount={updateAmount}
       removeItem={removeItem}
     />
   ));
@@ -37,17 +37,17 @@ const Cart = ({ onClose, onShowFinal }) => {
         <p>Seu carrinho</p>
         <button onClick={removeAll}>Esvaziar carrinho</button>
       </div>
-      <ul className={classes.cartLista}>
-        {itensCart.itens.length ? (
-          listaItensCart
+      <ul className={classes.cartList}>
+        {itemsCart.items.length ? (
+          listItemsCart
         ) : (
-          <p className={classes.semItens}>Não há itens no seu carrinho.</p>
+          <p className={classes.noItems}>Não há itens no seu carrinho.</p>
         )}
       </ul>
-      {itensCart.itens.length ? (
+      {itemsCart.items.length ? (
         <div className={classes.total}>
           <p>
-            Subtotal: <span>R$ {Number(itensCart.total).toFixed(2)}</span>
+            Subtotal: <span>R$ {Number(itemsCart.total).toFixed(2)}</span>
           </p>
           <WrapperButton onClick={showFinalModalHandler}>
             Finalizar compra
@@ -56,7 +56,7 @@ const Cart = ({ onClose, onShowFinal }) => {
       ) : (
         ""
       )}
-      <ButtonFechar onClose={onClose} />
+      <ButtonClose onClose={onClose} />
     </Modal>
   );
 };
