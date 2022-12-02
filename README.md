@@ -2,7 +2,7 @@
 
 Projeto de uma página de catálogo de uma loja, feito em React JS, HTML e CSS.  
   
-![página](https://github.com/aridsm/lojinha-cactus/blob/master/public/page.gif)
+![página](https://github.com/aridsm/lojinha-cactus/blob/master/public/lojinha.gif)
 
 
 ## Finalidade
