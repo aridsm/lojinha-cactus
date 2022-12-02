@@ -55,7 +55,10 @@ const Filter = () => {
 
   const applyFilter = () => {
     saveFilter(filter);
-    showAlert("Filtro aplicado");
+    const filterHasChanged = !(
+      JSON.stringify(filterSaved) === JSON.stringify(filter)
+    );
+    if (filterHasChanged) showAlert("Filtro aplicado");
   };
 
   const cleanFilter = () => {
