@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { FilterContext } from "../../../context/FilterContext";
+import { ColorModeContext } from "../../../context/ColorModeContext";
 import { ReactComponent as IconX } from "../../../assets/x.svg";
 import classes from "./FilterTags.module.css";
 
@@ -7,10 +8,16 @@ const FilterTags = () => {
   const { filter, deleteColor, deleteCategory, deleteInputSearchVal } =
     useContext(FilterContext);
 
+  const { isDarkMode } = useContext(ColorModeContext);
+
   return (
     <>
       {filter.name && (
-        <p className={classes.searchName}>
+        <p
+          className={`${classes.searchName} ${
+            isDarkMode ? classes.darkMode : ""
+          }`}
+        >
           <button onClick={deleteInputSearchVal} title="excluir pesquisa">
             <IconX />
           </button>{" "}

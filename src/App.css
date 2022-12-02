@@ -27,7 +27,7 @@
   --cor-4: #952354;
   --cor-3: rgb(72, 81, 85);
   --cor-5: #e8a3bb;
-  --cor-6: #acb2ba;
+  --cor-6: #b9bfc6;
   --cor-7: #2f3639;
   --cor-bg: #212628;
   --sombra: 0px 4px 30px #2324245f;
@@ -84,19 +84,17 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
-
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fbf8;
+  background: #e9efed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b4b4b4;
+  background: #a4b0ac;
 }
-
 @media all and (max-width: 550px) {
   body {
     font-size: 12px;

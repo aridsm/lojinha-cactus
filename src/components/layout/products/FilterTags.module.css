@@ -35,6 +35,10 @@
   align-items: center;
 }
 
+.darkMode {
+  color: var(--cor-5);
+}
+
 .searchName button {
   display: grid;
   place-items: center;

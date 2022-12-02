@@ -74,6 +74,7 @@
 
   .btnOpenFilter.filterVisible {
     border: 2px solid var(--cor-2);
+    background: var(--cor-7);
   }
 
   .btnOpenFilter svg {
@@ -92,7 +93,11 @@
     right: 1rem;
   }
 }
-
+@media all and (max-width: 600px) {
+  .filterContainer {
+    right: 1rem;
+  }
+}
 @media all and (max-width: 470px) {
   .filter {
     width: 100%;

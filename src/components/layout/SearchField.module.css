@@ -24,19 +24,15 @@
   position: absolute;
   z-index: -1;
 }
-
+.btn {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
 .iconSearch {
   color: var(--cor-4);
   width: 1rem;
   height: 1rem;
-}
-
-@media all and (max-width: 600px) {
-  .btn {
-    height: 2.5rem;
-    display: grid;
-    place-items: center;
-  }
 }
 
 @media all and (max-width: 480px) {

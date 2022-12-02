@@ -23,7 +23,7 @@ const SearchField = () => {
         id="search"
         placeholder="O que você procura?"
       />
-      <WrapperButton className={classes.btn}>
+      <WrapperButton className={classes.btn} title="Procurar">
         <IconSearch className={classes.iconSearch} />
       </WrapperButton>
     </form>

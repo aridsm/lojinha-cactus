@@ -46,7 +46,7 @@ const ProdutoItem = ({ name, img, price, description }) => {
               <input
                 type="number"
                 name="amount"
-                id="amount"
+                id={`amount-${name}`}
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 step="1"
